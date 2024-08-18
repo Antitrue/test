@@ -1,6 +1,6 @@
 module.exports = [
   {
-    files: ['**/*.ts', '**/*.tsx'], // Файлы для TypeScript и TSX
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -13,16 +13,16 @@ module.exports = [
         Buffer: 'readonly',
         jest: 'readonly'
       },
-      parser: require('@typescript-eslint/parser'), // Парсер для TypeScript
+      parser: require('@typescript-eslint/parser'),
       parserOptions: {
         ecmaFeatures: {
-          jsx: true // Включаем поддержку JSX
+          jsx: true
         }
       }
     },
     plugins: {
-      '@typescript-eslint': require('@typescript-eslint/eslint-plugin'), // Плагин для TypeScript
-      'react': require('eslint-plugin-react'), // Плагин для React
+      '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
+      'react': require('eslint-plugin-react'),
     },
     rules: {
       '@typescript-eslint/no-unused-vars': 'error',
@@ -31,8 +31,8 @@ module.exports = [
       'prefer-const': 'error',
       'semi': ['error', 'always'],
       'react/prop-types': 'off',
-      'react/jsx-uses-react': 'off', // Отключаем старые правила для React 17+
-      'react/react-in-jsx-scope': 'off' // Отключаем необходимость импорта React в каждом файле
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off'
     }
   }
 ];
