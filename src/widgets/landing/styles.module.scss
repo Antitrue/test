@@ -17,14 +17,14 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 1px 0 0 #423636;
-  background: url('../images/greetingImg.png') no-repeat top right;
+  background: url('../../shared/assets/images/greeting.svg') no-repeat top right;
   @media screen and (max-width: 960px) {
     padding: 0 15px 235px 15px;
   }
   @media screen and (max-width: 850px) {
     background-blend-mode: soft-light;
     padding: 15px 15px;
-    background: rgba(22, 18, 59, 0.746) url('../images/greetingImg.png') no-repeat top left;
+    background: rgba(22, 18, 59, 0.746) url('../../shared/assets/images/greeting.svg') no-repeat top left;
     background-size: cover;
     box-shadow: none;
     align-items: center;
