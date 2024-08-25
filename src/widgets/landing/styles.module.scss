@@ -18,10 +18,11 @@
   justify-content: space-between;
   box-shadow: 0 1px 0 0 #423636;
   background: url('../../shared/assets/images/greeting.svg') no-repeat top right;
-  @media screen and (max-width: 960px) {
-    padding: 0 15px 235px 15px;
+  @media screen and (max-width: 900px) {
+    padding: 0 15px 287px 15px;
+    background-size: 430px 310px;
   }
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 780px) {
     background-blend-mode: soft-light;
     padding: 15px 15px;
     background: rgba(22, 18, 59, 0.746) url('../../shared/assets/images/greeting.svg') no-repeat top left;
@@ -32,19 +33,24 @@
 }
 
 .headerText {
+  margin-top: 40px;
   max-width: 405px;
   font-size: rem(40);
   color: #656a6e;
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 900px) {
+    font-size: rem(36);
+  }
+  @media screen and (max-width: 780px) {
     margin: 0 auto;
     margin-top: 130px;
+    font-size: rem(40);
     color: white;
   }
 }
 
 .headerText__lastLine {
   color: #ad47a3;
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 780px) {
     color: #ff4c2b;
     font-size: rem(32);
   }
