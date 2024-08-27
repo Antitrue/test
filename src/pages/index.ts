@@ -1,3 +1,3 @@
-import Landing from './_Landing';
+import Landing from './Landing';
 
 export { Landing };
