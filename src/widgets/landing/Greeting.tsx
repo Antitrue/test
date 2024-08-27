@@ -1,20 +1,17 @@
 import { Button } from 'antd';
+import fns from '../../shared/lib/helpers';
 
-import Class from './styles.module.scss';
+import styles from './styles.module.scss';
 
 function Greeting() {
-  function fnToUpperCase(text: string) {
-    return text.toUpperCase();
-  }
-
   return (
-    <div className={Class.container}>
-      <h1 className={Class.headerText}>
+    <div className={styles.container}>
+      <h1 className={styles.headerText}>
         Мы заботимся <br /> о здоровье <br />{' '}
-        <span className={Class.headerText__lastLine}>{fnToUpperCase('ваших питомцев')}</span>
+        <span className={styles.headerText__lastLine}>{fns.FnToUpperCase('ваших питомцев')}</span>
       </h1>
-      <Button type='primary' className={Class.button}>
-        {fnToUpperCase('записаться на приём')}
+      <Button type='primary' className={styles.button}>
+        {fns.FnToUpperCase('записаться на приём')}
       </Button>
     </div>
   );

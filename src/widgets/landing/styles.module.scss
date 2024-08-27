@@ -1,21 +1,11 @@
-@use 'sass:math';
-
-@function rem($pixel) {
-  @if math.is-unitless($pixel) {
-    @return math.div($pixel, 16) + rem;
-  } @else {
-    @error 'Don\'t use units when using the rem() function; only numbers.';
-  }
-}
+@use '../../shared/lib/useStyles.module.scss' as *;
 
 .container {
   margin: 0 auto;
   padding: 0 15px 155px 15px;
   max-width: 960px;
   height: 595px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex(column, space-between, 0);
   box-shadow: 0 1px 0 0 #423636;
   background: url('../../shared/assets/images/greeting.svg') no-repeat top right;
   @media screen and (max-width: 900px) {
@@ -33,10 +23,9 @@
 }
 
 .headerText {
+  @include headerText(40);
   margin-top: 40px;
   max-width: 405px;
-  font-size: rem(40);
-  color: #656a6e;
   @media screen and (max-width: 900px) {
     font-size: rem(36);
   }

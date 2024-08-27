@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import Greeting from '../../widgets/landing/Greeting';
+import Landing from '../../pages/landing';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ export const MainRoutes = createBrowserRouter([
         index: true,
         element: (
           <div>
-            <Greeting />
+            <Landing />
           </div>
         ),
       },
