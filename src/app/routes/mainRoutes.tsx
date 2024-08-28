@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import Greeting from '../../widgets/landing/Description';
+import Description from '../../widgets/landing/Description';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ export const MainRoutes = createBrowserRouter([
       },
       {
         path: 'description',
-        element: <Greeting />,
+        element: <Description />,
       },
     ],
   },
