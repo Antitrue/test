@@ -1,0 +1,45 @@
+.linksList {
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    min-height: 350px;
+  }
+}
+
+.linksList li {
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
+}
+
+.link {
+  display: block;
+  min-width: 50px;
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+  @media screen and (min-width: 956px) {
+    min-width: auto;
+    text-align: start;
+  }
+  @media screen and (max-width: 780px) {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    text-align: start;
+  }
+}
+
+.link:hover {
+  color: #2e75b7;
+  @media screen and (max-width: 780px) {
+    background: rgba(84, 150, 212, 0.2);
+    border-left: 3px solid #2e75b7;
+  }
+}

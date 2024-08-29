@@ -1,0 +1,8 @@
+.disabled {
+  @media screen and (max-width: 780px) {
+    filter: blur(5px);
+    pointer-events: none;
+    height: 100vh;
+    overflow: clip;
+  }
+}

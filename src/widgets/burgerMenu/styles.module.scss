@@ -1,0 +1,50 @@
+@mixin flex($flex-direction, $justify-content, $gap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+.menu {
+  position: absolute;
+  left: -360px;
+  top: 0;
+  width: 360px;
+  min-height: 640px;
+  height: 100vh;
+  border-right: 1px solid #7e8b96;
+  transition: transform 0.5s;
+  @media screen and (min-width: 781px) {
+    display: none;
+  }
+  @media screen and (max-width: 360px) {
+    left: -100%;
+    width: 100%;
+  }
+}
+
+.open {
+  transform: translateX(100%);
+}
+
+.buttonBack {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  padding-left: 20px;
+  height: 16px;
+  width: 70px;
+  border: none;
+  background: url('../../shared/assets/images/arrow-left.svg') no-repeat;
+  cursor: pointer;
+}
+
+.pofile {
+  padding-top: 30px;
+  height: 225px;
+  @include flex(column, space-around, 0);
+  align-items: center;
+  background: #8697a8 url('../../shared/assets/images/triangle-wallpaper.jfif') no-repeat;
+  background-blend-mode: luminosity;
+  background-size: 100% 224px;
+}
