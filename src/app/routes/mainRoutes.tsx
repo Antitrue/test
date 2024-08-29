@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import { Landing } from '../../pages';
-import Description from '../../widgets/landing/Description';
+// import Description from '../../widgets/landing/Description';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -20,10 +20,6 @@ export const MainRoutes = createBrowserRouter([
       {
         path: 'forum',
         element: <div>Страничка Forum</div>,
-      },
-      {
-        path: 'description',
-        element: <Description />,
       },
     ],
   },
