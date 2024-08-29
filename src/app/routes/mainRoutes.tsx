@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
+import { Landing } from '../../pages';
 import Description from '../../widgets/landing/Description';
 
 export const MainRoutes = createBrowserRouter([
@@ -10,7 +11,7 @@ export const MainRoutes = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Страничка Landing</div>,
+        element: <Landing />,
       },
       {
         path: 'sign-in',
