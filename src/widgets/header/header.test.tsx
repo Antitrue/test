@@ -3,7 +3,7 @@ import Header from './Header';
 
 describe('Header component', () => {
   it('Header renders', () => {
-    render(<Header openMenu={() => {}} />);
+    render(<Header />);
 
     expect(screen.getByText('Sign In' || 'Аккаунт'));
   });
