@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import { Landing } from '../../pages';
-// import Description from '../../widgets/landing/Description';
+import { SignIn, Landing } from '../../pages';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -15,7 +14,7 @@ export const MainRoutes = createBrowserRouter([
       },
       {
         path: 'sign-in',
-        element: <div>Страничка Авторизации</div>,
+        element: <SignIn />,
       },
       {
         path: 'forum',
