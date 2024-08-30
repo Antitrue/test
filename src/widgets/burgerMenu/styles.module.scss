@@ -7,19 +7,15 @@
 
 .menu {
   position: absolute;
-  left: -360px;
+  left: -100%;
   top: 0;
-  width: 360px;
+  width: 100%;
   min-height: 640px;
   height: 100vh;
   border-right: 1px solid #7e8b96;
   transition: transform 0.5s;
   @media screen and (min-width: 781px) {
     display: none;
-  }
-  @media screen and (max-width: 360px) {
-    left: -100%;
-    width: 100%;
   }
 }
 
@@ -46,5 +42,18 @@
   align-items: center;
   background: #8697a8 url('../../shared/assets/images/triangle-wallpaper.jfif') no-repeat;
   background-blend-mode: luminosity;
-  background-size: 100% 224px;
+  background-size: 100% auto;
+}
+
+.button {
+  width: 200px;
+  height: 40px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.divider {
+  border: 1px solid #d9d9d9;
+  margin: 0 auto;
+  min-width: 90%;
+  width: 90%;
 }

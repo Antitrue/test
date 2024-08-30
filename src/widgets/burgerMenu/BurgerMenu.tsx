@@ -24,13 +24,13 @@ const BurgerMenu: React.FC<props> = ({ closeMenu, burgerMenu }) => {
         </button>
         <UserAvatar size={100} />
         <Link to={'/sign-in'}>
-          <Button type='primary' style={{ width: '200px', height: '40px' }}>
+          <Button type='primary' className={styles.button}>
             Sign In
           </Button>
         </Link>
       </div>
       <Navigation />
-      <Divider style={{ border: '1px solid #D9D9D9', margin: '0 auto', minWidth: '90%', width: '90%' }} />
+      <Divider className={styles.divider} />
     </section>
   );
 };

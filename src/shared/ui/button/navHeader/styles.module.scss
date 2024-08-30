@@ -1,9 +1,12 @@
 .linksList {
   position: relative;
-  list-style-type: none;
   display: flex;
+  justify-content: space-around;
   gap: 15px;
   align-items: center;
+  @media screen and (max-width: 830px) {
+    gap: 8px;
+  }
   @media screen and (max-width: 780px) {
     flex-direction: column;
     align-items: flex-start;
@@ -20,20 +23,20 @@
 
 .link {
   display: block;
-  min-width: 50px;
-  width: auto;
   text-align: center;
+  color: #3a4045;
   cursor: pointer;
-  @media screen and (min-width: 956px) {
-    min-width: auto;
-    text-align: start;
-  }
   @media screen and (max-width: 780px) {
     padding: 10px;
+    padding-left: 20px;
     width: 100%;
     height: 40px;
     text-align: start;
   }
+}
+
+li:nth-child(7) {
+  text-wrap: nowrap;
 }
 
 .link:hover {
