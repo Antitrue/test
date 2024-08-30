@@ -2,18 +2,19 @@ $color-text: #656a6e;
 
 .service {
   margin: 0 auto;
+  padding: 0 22px;
   margin-top: 36px;
   padding-bottom: 90px;
-  width: 360px;
+  width: 382px;
   border-bottom: 1px solid #d9d9d9;
   font-weight: 700;
 
-  @media (width >= 480.98px) and (width <= 1439.98px) {
-    width: 790px;
+  @media (width >= 480.98px) and (width <= 1025.98px) {
+    width: 812px;
   }
 
   @media (width >= 1025.98px) {
-    width: 961px;
+    width: 983px;
   }
 
   br {
