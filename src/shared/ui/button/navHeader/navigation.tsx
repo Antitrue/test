@@ -17,9 +17,7 @@ function Navigation() {
     <ul className={Class.linksList}>
       {links.map(link => (
         <li key={link}>
-          <Link to={'#'} className={Class.link}>
-            {link}
-          </Link>
+          <Link to={'#'}>{link}</Link>
         </li>
       ))}
     </ul>

@@ -1,10 +1,30 @@
 import { render, screen } from '@testing-library/react';
-import Header from './Header';
+import Header from './header';
+
+import { MemoryRouter } from 'react-router-dom';
+
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: jest.fn().mockImplementation(query => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  })),
+});
 
 describe('Header component', () => {
   it('Header renders', () => {
-    render(<Header />);
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
 
-    expect(screen.getByText('Sign In' || 'Аккаунт'));
+    expect(screen.getByText('Register' || 'Аккаунт'));
   });
 });
