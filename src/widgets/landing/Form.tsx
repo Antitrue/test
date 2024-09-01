@@ -1,6 +1,7 @@
 import type { FormProps } from 'antd';
 import { Button, Checkbox, Form, Input } from 'antd';
 import DoctorSVG from '../../shared/assets/images/doctorForForm.svg';
+import fns from '../../shared/lib/helpers';
 
 import styles from './form.module.scss';
 import { useState } from 'react';
@@ -74,7 +75,7 @@ const FormOnlineAppointment: React.FC = () => {
 
             <Form.Item>
               <Button type='primary' htmlType='submit' className={styles.button}>
-                записаться онлайн
+                {fns.FnToUpperCase('записаться онлайн')}
               </Button>
             </Form.Item>
           </Form>
