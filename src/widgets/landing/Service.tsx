@@ -15,7 +15,7 @@ const Service = () => {
       <div className={classes.box}>
         <ul className={classes.buttonsService}>
           <li className={classes.buttonService}>
-            <input type='radio' id='therapy' name='service' checked />
+            <input type='radio' id='therapy' name='service' defaultChecked />
             <label htmlFor='therapy'>
               <img className={classes.imgService} src='src\shared\assets\images\therapy.svg' alt='' />
               <p>Терапия</p>
