@@ -1,0 +1,29 @@
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formImage {
+  width: 200px;
+  height: 100px;
+  margin-bottom: 23px;
+}
+
+.formTitle {
+  font-size: clamp(1rem, 0.7799rem + 0.939vw, 1.625rem);
+  padding-bottom: 4px;
+  font-weight: 600;
+}
+
+.formText {
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  color: #1a293d;
+  font-weight: 400;
+
+  @media (width <= 360px) {
+    &.hideOnSmallScreen {
+      display: none;
+    }
+  }
+}

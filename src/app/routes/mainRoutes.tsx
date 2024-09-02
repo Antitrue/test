@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
+import { SignIn, Landing } from '../../pages';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -9,11 +10,11 @@ export const MainRoutes = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>Страничка Landing</div>,
+        element: <Landing />,
       },
       {
         path: 'sign-in',
-        element: <div>Страничка Авторизации</div>,
+        element: <SignIn />,
       },
       {
         path: 'forum',
