@@ -258,10 +258,13 @@ $color-text: #656a6e;
       }
     }
 
-    img {
+    .imagesCat {
       margin-bottom: 252px;
       width: 242px;
       height: 242px;
+      background-image: url("../../../shared/assets/images/catForService.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
 
       @media (width >= 768.98px) and (width <= 1024.98px) {
         margin-bottom: 126px;

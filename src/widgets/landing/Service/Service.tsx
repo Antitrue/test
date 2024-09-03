@@ -30,7 +30,8 @@ const Service = () => {
           {service.map((el: [string, string], index: number) => getButtonName(el, index))}
         </ul>
         <div className={classes.info}>
-          <img src='src\shared\assets\images\catForService.svg' alt='' />
+          <span className={classes.imagesCat}></span>
+          {/* <img src='src\shared\assets\images\catForService.svg' alt='' /> */}
           <div>
             <h3>Терапия</h3>
             <ul>
