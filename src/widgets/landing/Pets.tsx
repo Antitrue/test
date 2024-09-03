@@ -1,37 +1,25 @@
 import { Flex } from 'antd';
 
-import Class from './Pets.module.scss';
+import styles from './Pets.module.scss';
+import { pets } from './Pets.constants';
+import { ReactNode } from 'react';
 
 function Pets() {
   return (
-    <Flex vertical className={Class.container}>
-      <div className={Class.header}>Работаем со всеми видами животных</div>
-      <Flex className={Class.pets}>
-        <button type='button' className={Class.buttons + ' ' + Class.button_1}>
-          01
-        </button>
-        <button type='button' className={Class.buttons + ' ' + Class.button_2}>
-          02
-        </button>
-        <button type='button' className={Class.buttons + ' ' + Class.button_3}>
-          03
-        </button>
-        <button type='button' className={Class.buttons + ' ' + Class.button_4}>
-          04
-        </button>
-        <button type='button' className={Class.buttons + ' ' + Class.button_5}>
-          05
-        </button>
-        <button type='button' className={Class.buttons + ' ' + Class.button_6}>
-          06
-        </button>
-        <button type='button' className={Class.buttons + ' ' + Class.button_7}>
-          07
-        </button>
-        <button type='button' className={Class.buttons + ' ' + Class.button_8}>
-          Вызвать доктора
-          <br />
-          на дом
+    <Flex vertical className={styles.container}>
+      <div className={styles.header}>Работаем со всеми видами животных</div>
+      <Flex className={styles.pets}>
+        {pets.map<ReactNode>((pet: string, id: number): ReactNode => {
+          return (
+            <div key={id} className={styles.cards + ' ' + styles[`card_${id + 1}`]}>
+              <span className={styles.card_number}>{`0${id + 1}`}</span>
+              <span className={styles.card_name}>{pet}</span>
+            </div>
+          );
+        })}
+        <button type='button' className={styles.cards + ' ' + styles.button}>
+          <span>Вызвать доктора </span>
+          <span>на дом</span>
         </button>
       </Flex>
     </Flex>
