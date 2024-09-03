@@ -31,7 +31,6 @@ const Service = () => {
         </ul>
         <div className={classes.info}>
           <span className={classes.imagesCat}></span>
-          {/* <img src='src\shared\assets\images\catForService.svg' alt='' /> */}
           <div>
             <h3>Терапия</h3>
             <ul>
