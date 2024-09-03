@@ -1,0 +1,136 @@
+.container {
+  max-width: 960px;
+  justify-content: space-between;
+  margin: 70px auto 0;
+  align-items: end;
+  gap: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+  color: rgb(51 51 51 / 100%);
+  border-bottom: 1px solid rgb(217 217 217 / 100%);
+
+  @media screen and (width <= 960px) {
+    margin: 60px auto;
+  }
+
+  @media screen and (width <= 780px) {
+    margin: 25px auto 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+  }
+
+  .description {
+    max-width: 465px;
+
+    @media screen and (width <= 960px) {
+      max-width: 60%;
+    }
+
+    @media screen and (width <= 780px) {
+      max-width: 100%;
+    }
+
+    .description__header {
+      font-size: 36px;
+      line-height: 42px;
+      font-weight: 600;
+      margin-bottom: 25px;
+
+      @media screen and (width <= 960px) {
+        margin-bottom: 20px;
+      }
+
+      @media screen and (width <= 780px) {
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+
+    .description__body {
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 600;
+      margin-bottom: 25px;
+
+      @media screen and (width <= 960px) {
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      @media screen and (width <= 780px) {
+        font-size: 14px;
+        line-height: 28px;
+      }
+    }
+
+    .history__header {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 500;
+      margin-bottom: 15px;
+
+      @media screen and (width <= 780px) {
+        font-size: 20px;
+      }
+    }
+
+    .history__body {
+      font-size: 16px;
+      line-height: 25px;
+      font-weight: 400;
+    }
+
+    .show_more_button {
+      background-color: transparent;
+      border: none;
+      font-size: 16px;
+      float: right;
+      color: rgb(78 178 236 / 100%);
+      margin-top: 15px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .facts {
+      justify-content: space-between;
+      padding-bottom: 50px;
+
+      @media screen and (width <= 780px) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 30px;
+        padding-bottom: 0;
+      }
+
+      .facts__block {
+        max-width: 140px;
+
+        .facts_big {
+          font-size: 40px;
+          font-weight: 700;
+          color: rgb(78 178 236 / 100%);
+        }
+
+        .facts_small {
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .about_img {
+    max-width: 465px;
+
+    @media screen and (width <= 960px) {
+      max-width: 40%;
+    }
+
+    @media screen and (width <= 780px) {
+      display: none;
+    }
+  }
+}
