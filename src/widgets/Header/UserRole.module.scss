@@ -1,0 +1,185 @@
+.container {
+  flex-direction: row;
+  max-width: 200px;
+  height: 100%;
+  margin-left: auto;
+  justify-content: space-between;
+  background-color: transparent;
+
+  @media screen and (width <= 900px) {
+    width: 128px;
+  }
+
+  @media screen and (width <= 780px) {
+    background-color: rgb(84 150 212 / 100%);
+  }
+
+  > div:first-child {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100px;
+
+    .notification_button {
+      width: 16px;
+      height: 16px;
+      border: none;
+      cursor: pointer;
+      margin-right: 20px;
+      background: url('../../shared/assets/images/icon-bell-black.svg') no-repeat center;
+
+      @media screen and (width <= 900px) {
+        margin-right: 10px;
+      }
+
+      @media screen and (width <= 780px) {
+        background: url('../../shared/assets/images/icon-bell-white.svg') no-repeat center;
+      }
+    }
+
+    .has_notification {
+      &::after {
+        display: inline-block;
+        position: relative;
+        content: '';
+        width: 7px;
+        height: 7px;
+        background: url('../../shared/assets/images/notification_bubble.svg') no-repeat center;
+        border: 1px solid white;
+        border-radius: 50%;
+        top: 5px;
+        left: 5px;
+
+        @media screen and (width <= 780px) {
+          border-color: rgb(84 150 212 / 100%);
+        }
+      }
+    }
+
+    .divider {
+      height: 20px;
+      border-color: rgb(217 217 217 / 100%);
+      margin-left: 0;
+      margin-right: 20px;
+
+      @media screen and (width <= 900px) {
+        margin-right: 10px;
+      }
+
+      @media screen and (width <= 780px) {
+        border-color: rgb(46 117 183 / 100%);
+      }
+    }
+
+    .role_header {
+      color: rgb(58 64 69 / 100%);
+      font-size: 12px;
+      line-height: 16px;
+
+      @media screen and (width <= 780px) {
+        color: rgb(254 254 254 / 100%);
+      }
+    }
+
+    .user_role {
+      color: rgb(0 0 0 / 35%);
+      font-size: 12px;
+      line-height: 16px;
+
+      @media screen and (width <= 780px) {
+        color: rgb(255 255 255 / 35%);
+      }
+    }
+  }
+
+  > div:last-child {
+    justify-content: space-between;
+    align-items: center;
+
+    .show_more_button {
+      margin-right: 10px;
+      width: 11px;
+      height: 11px;
+      mask: url('../../shared/assets/images/arrow.svg') no-repeat center;
+      background-color: rgb(58 64 69 / 100%);
+      transform: rotate(90deg);
+      border: none;
+      cursor: pointer;
+
+      @media screen and (width <= 780px) {
+        background-color: rgb(254 254 254 / 100%);
+      }
+    }
+
+    .avatar {
+      @media screen and (width <= 780px) {
+        border-radius: 50%;
+        border: 2px solid rgb(46 117 183 / 100%);
+      }
+    }
+  }
+}
+
+.modal_window {
+  justify-content: space-evenly;
+  position: absolute;
+  right: 86px;
+  width: 120px;
+  height: 96px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgb(195 196 198 / 50%);
+  background: rgb(255 255 255 / 100%);
+
+  @media screen and (width <= 900px) {
+    right: 50px;
+  }
+
+  .modal_window__profile,
+  .modal_window__exit {
+    background: none;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    cursor: pointer;
+    text-align: start;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .modal_window__profile {
+    color: rgb(195 196 198 / 100%);
+    text-indent: 13px;
+
+    > span {
+      display: inline-block;
+      transform: scale(0.75, 1);
+    }
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: url('../../shared/assets/images/icon-person.svg');
+      left: 15px;
+      bottom: 56px;
+    }
+  }
+
+  .modal_window__exit {
+    color: rgb(232 69 77 / 100%);
+    text-indent: 30px;
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: url('../../shared/assets/images/icon-exit.svg');
+      left: 17px;
+      bottom: 17px;
+    }
+  }
+}

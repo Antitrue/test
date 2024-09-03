@@ -1,6 +1,8 @@
 import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
 
+import UserRole from '../widgets/Header/UserRole';
+
 const { Header, Content, Footer } = Layout;
 
 function App() {
@@ -12,7 +14,9 @@ function App() {
         margin: '0 auto',
         background: 'none',
       }}>
-      <Header style={{ background: 'none' }}>Header</Header>
+      <Header style={{ background: 'none' }}>
+        <UserRole />
+      </Header>
       <Content
         style={{
           background: 'none',
