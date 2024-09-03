@@ -28,7 +28,6 @@ function App() {
       </Content>
       <Footer style={{ background: 'none' }}>Footer</Footer>
     </Layout>
->>>>>>> src/app/App.tsx
   );
 }
 
