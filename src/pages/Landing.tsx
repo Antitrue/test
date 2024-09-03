@@ -1,4 +1,4 @@
-import Service from '../widgets/landing/Service';
+import Service from '../widgets/landing/Service/Service';
 
 function Landing() {
   return (
