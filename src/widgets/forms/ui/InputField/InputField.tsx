@@ -24,7 +24,7 @@ export default function InputField({ type, name, label, placeholder, ...otherPro
     <label className={styles.formLabel}>
       {label}
       <input
-        type={type === 'password' && showPassword ? 'text' : 'password'}
+        type={type === 'password' && showPassword ? 'text' : type}
         placeholder={placeholder}
         {...otherProps}
         className={`${styles.formInput} ${errorMessage ? styles.invalidInput : ''}`}
