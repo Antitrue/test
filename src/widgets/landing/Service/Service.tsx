@@ -4,9 +4,9 @@ import { service } from './constant';
 import classes from './Service.module.scss';
 
 const Service = () => {
-  const getButtonName = (el: [string, string]) => {
+  const getButtonName = (el: [string, string], index: number) => {
     return (
-      <li className={classes.buttonService}>
+      <li key={index} className={classes.buttonService}>
         <input type='radio' id={el[1]} name='service' defaultChecked />
         <label htmlFor={el[1]}>
           <img className={classes.imgService} src={`src\\shared\\assets\\images\\${el[1]}.svg`} alt={`${el[1]}`} />
@@ -26,7 +26,9 @@ const Service = () => {
         При каких симптомах нужно обратиться в наш ветеринарный <br /> центр
       </p>
       <div className={classes.box}>
-        <ul className={classes.buttonsService}>{service.map((el: [string, string]) => getButtonName(el))}</ul>
+        <ul className={classes.buttonsService}>
+          {service.map((el: [string, string], index: number) => getButtonName(el, index))}
+        </ul>
         <div className={classes.info}>
           <img src='src\shared\assets\images\catForService.svg' alt='' />
           <div>
