@@ -1,23 +1,28 @@
 import { Link } from 'react-router-dom';
-import Class from './styles.module.scss';
+import styles from './styles.module.scss';
+
+interface link {
+  label: string;
+  path: string;
+}
 
 function Navigation() {
-  const links: string[] = [
-    'Список докторов',
-    'Список процедур',
-    'Список того',
-    'О чем-нибудь',
-    'Список сосисок',
-    'Контакты',
-    'О нас',
-    'Форум',
+  const links: link[] = [
+    { label: 'Список докторов', path: '#' },
+    { label: 'Список процедур', path: '#' },
+    { label: 'Список того', path: '#' },
+    { label: 'О чем-нибудь', path: '#' },
+    { label: 'Список сосисок', path: '#' },
+    { label: 'Контакты', path: '#' },
+    { label: 'О нас', path: '#' },
+    { label: 'Форум', path: '#' },
   ];
 
   return (
-    <ul className={Class.linksList}>
+    <ul className={styles.linksList}>
       {links.map(link => (
-        <li key={link}>
-          <Link to={'#'}>{link}</Link>
+        <li key={link.label}>
+          <Link to={link.path}>{link.label}</Link>
         </li>
       ))}
     </ul>
