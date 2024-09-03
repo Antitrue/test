@@ -1,0 +1,40 @@
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+  color: #1b2b41;
+}
+
+.formInput {
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  line-height: 22px;
+  padding: 8px 50px 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+
+  &::placeholder {
+    opacity: 0.3;
+  }
+
+  &:focus {
+    outline: 1px solid #1890ff;
+  }
+}
+
+.invalidInput {
+  border: 1px solid red;
+}
+
+.formEye {
+  border: none;
+  background: none;
+  outline: none;
+  position: absolute;
+  top: 70%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
