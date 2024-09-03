@@ -1,7 +1,8 @@
 import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
+import Header from '../widgets/header';
 
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         margin: '0 auto',
         background: 'none',
       }}>
-      <Header style={{ background: 'none' }}>Header</Header>
+      <Header />
       <Content
         style={{
           background: 'none',
