@@ -10,27 +10,36 @@
   padding: 0;
   max-width: 1000px;
   font-size: 12px;
-  @media screen and (max-width: 780px) {
+
+  @media screen and (width <= 780px) {
     margin: 0;
   }
+
   .desktop {
     padding: 0 20px;
     min-width: 100%;
     height: 60px;
+
     @include flex(row, space-between, 10px);
+
     align-items: center;
-    @media screen and (max-width: 780px) {
+
+    @media screen and (width <= 780px) {
       display: none;
     }
   }
+
   .mobile {
     padding: 0 20px;
     min-width: 100%;
     height: 50px;
+
     @include flex(row, space-between, 10px);
+
     align-items: center;
     background: #5496d4;
-    @media screen and (min-width: 781px) {
+
+    @media screen and (width >= 781px) {
       display: none;
     }
   }
