@@ -4,10 +4,12 @@
   justify-content: space-around;
   gap: 15px;
   align-items: center;
-  @media screen and (max-width: 830px) {
+
+  @media screen and (width <= 830px) {
     gap: 8px;
   }
-  @media screen and (max-width: 780px) {
+
+  @media screen and (width <= 780px) {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
@@ -21,7 +23,8 @@
   text-align: center;
   color: #3a4045;
   cursor: pointer;
-  @media screen and (max-width: 780px) {
+
+  @media screen and (width <= 780px) {
     padding: 10px;
     padding-left: 20px;
     height: 40px;
@@ -35,8 +38,9 @@ li:nth-child(7) {
 
 .linksList li:hover {
   color: #2e75b7;
-  @media screen and (max-width: 780px) {
-    background: rgba(84, 150, 212, 0.2);
+
+  @media screen and (width <= 780px) {
+    background: rgb(84 150 212 / 20%);
     border-left: 3px solid #2e75b7;
   }
 }
