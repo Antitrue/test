@@ -1,7 +1,10 @@
 import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
 
-const { Header, Content, Footer } = Layout;
+import Header from '../widgets/header';
+import Footer from '../widgets/Footer/Footer';
+
+const { Content: LayoutContent, Footer: LayoutFooter } = Layout;
 
 function App() {
   return (
@@ -12,20 +15,13 @@ function App() {
         margin: '0 auto',
         background: 'none',
       }}>
-      <Header style={{ background: 'none' }}>Header</Header>
-      <Content
-        style={{
-          background: 'none',
-          maxWidth: '960px',
-          width: '100%',
-          alignSelf: 'center',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+      <Header />
+      <LayoutContent>
         <Outlet />
-      </Content>
-      <Footer style={{ background: 'none' }}>Footer</Footer>
+      </LayoutContent>
+      <LayoutFooter style={{ background: 'none', padding: 0 }}>
+        <Footer />
+      </LayoutFooter>
     </Layout>
   );
 }

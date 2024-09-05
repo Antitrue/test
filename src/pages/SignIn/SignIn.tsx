@@ -1,9 +1,11 @@
-import AuthForm from '../../widgets/forms/AuthForm/AuthForm';
+import AuthProcess from '../../processes/AuthProcess';
 
-export default function SignIn() {
+function SignIn() {
   return (
     <div>
-      <AuthForm />
+      <AuthProcess />
     </div>
   );
 }
+
+export default SignIn;

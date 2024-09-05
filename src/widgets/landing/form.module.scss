@@ -1,0 +1,153 @@
+@use '../../shared/lib/useStyles.module.scss' as *;
+
+.wrapper {
+  margin: 40px auto;
+  padding: 15px;
+  max-width: 980px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (width <= 900px) {
+    padding: 15px 0;
+    height: auto;
+  }
+}
+
+.formSection {
+  padding: 22px;
+  width: 960px;
+  height: 350px;
+
+  @include flex(row, end, 40px);
+
+  align-items: center;
+  border-radius: 8px;
+  background: #f6f6f6;
+
+  @media screen and (width <= 930px) {
+    gap: 10px;
+  }
+
+  @media screen and (width <= 900px) {
+    height: auto;
+
+    @include flex(column, start, 80px);
+
+    background-color: rgb(0 0 0 / 0%);
+  }
+
+  @media screen and (width <= 580px) {
+    padding: 22px 10px;
+    gap: 50px;
+  }
+}
+
+.article {
+  max-width: 340px;
+
+  .title {
+    padding-top: 45px;
+    padding-left: 60px;
+    height: 200px;
+    width: 100%;
+
+    @include headerText(48);
+
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='50' cy='50' r='42.5' stroke='%23FF00E5' stroke-width='15'/%3e%3c/svg%3e ")
+      no-repeat 0 0;
+
+    @media screen and (width <= 900px) {
+      margin-top: 23px;
+    }
+  }
+
+  .paragraph {
+    padding-left: 60px;
+
+    @include headerText(16);
+
+    width: 100%;
+  }
+}
+
+.formWrapper {
+  width: 500px;
+  height: 410px;
+
+  @include flex(row, space-between, 0);
+
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #ff00e5;
+  background: white;
+
+  @media screen and (width <= 580px) {
+    height: auto;
+    width: auto;
+  }
+}
+
+.doctorImg {
+  height: 450px;
+  width: auto;
+
+  @media screen and (width <= 580px) {
+    display: none;
+  }
+}
+
+.form {
+  margin-bottom: 50px;
+  padding: 10px;
+  width: auto;
+  height: 345px;
+
+  .input,
+  .checkbox,
+  button {
+    height: 50px;
+    width: 230px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .input {
+    text-align: center;
+    border-radius: 10px;
+    background: #f6f6f6;
+  }
+
+  .input::placeholder {
+    color: #656a6e;
+  }
+
+  .button {
+    border-radius: 20px;
+  }
+
+  .checkbox {
+    height: 40px;
+    color: #656a6e;
+  }
+
+  .error {
+    color: #ff4d4f;
+  }
+
+  @media screen and (width <= 580px) {
+    margin: 0;
+    padding: 20px;
+    height: auto;
+  }
+}
+
+.form__title {
+  margin-bottom: 30px;
+
+  @include headerText(20);
+
+  color: black;
+  text-wrap: nowrap;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+}
