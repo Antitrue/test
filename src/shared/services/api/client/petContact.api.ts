@@ -4,7 +4,7 @@ import { petContact } from './petContactDTO';
 import { prepareHeaders } from '../lib/prepareHeadersApi';
 import { baseUrl } from '../lib/consts';
 
-const petContactAPI = createApi({
+export const petContactAPI = createApi({
   reducerPath: 'petContactAPI',
   tagTypes: ['petContact'],
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl, prepareHeaders }),
