@@ -30,7 +30,7 @@ const RegForm = ({}) => {
           <InputField type='password' label='Password' name='password' placeholder='*******' />
           <InputField type='password' label='Confirm Password' name='password' placeholder='*******' />
           <CheckboxField isLogin />
-          <FormFooter isLogin={false} linkTo='#' />
+          <FormFooter isLogin={false} linkTo='/sign-in' />
         </form>
       </CardWrapper>
     </FormProvider>
