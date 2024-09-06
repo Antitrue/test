@@ -28,7 +28,7 @@ export default function AuthForm({ onSubmit }: AuthPorps) {
           <InputField type='email' label='Email Adress' name='email' placeholder='johndoe@gmail.com' />
           <InputField type='password' label='Password' name='password' placeholder='*******' />
           <CheckboxField isLogin />
-          <FormFooter isLogin linkTo='#' />
+          <FormFooter isLogin linkTo='/sign-up' />
         </form>
       </CardWrapper>
     </FormProvider>
