@@ -1,6 +1,6 @@
 import RegForm from '../../widgets/forms/RegForm/RegForm';
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <div>
       <RegForm />
