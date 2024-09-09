@@ -1,8 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { petContact } from './petContactDTO';
-import { prepareHeaders } from '../lib/prepareHeadersApi';
-import { baseUrl } from '../lib/consts';
+import { prepareHeaders, baseUrl } from '../lib';
 
 export const petContactAPI = createApi({
   reducerPath: 'petContactAPI',
