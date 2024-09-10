@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: clamp(0.875rem, 0.7546rem + 0.5505vw, 1.25rem);
+  color: white;
+  background-color: #656a6e;
+}
