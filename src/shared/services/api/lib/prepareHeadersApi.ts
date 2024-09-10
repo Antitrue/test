@@ -16,6 +16,7 @@ export const prepareHeaders = (headers: Headers, { getState }: Pick<BaseQueryApi
   headers.set('Accept', 'application/json');
   headers.set('Accept', 'image/png');
   headers.set('Accept', '*/*');
+  headers.set('Accept', 'application/json');
   headers.set('Content-Type', 'application/json');
 
   return headers;
