@@ -6,6 +6,7 @@ import { IClientReview } from './clientReviewDTO';
 
 export const clientReviewAPI = createApi({
   reducerPath: 'clientReviewApi',
+  tagTypes: ['clientReview'],
   baseQuery: fetchBaseQuery({
     baseUrl: `${baseUrl}client/doctor/`,
     prepareHeaders,
@@ -16,17 +17,20 @@ export const clientReviewAPI = createApi({
         url: `${id}/review`,
         method: 'DELETE',
       }),
+      invalidatesTags: ['clientReview'],
     }),
     getClientReview: builder.query<IClientReview, number>({
       query: id => ({
         url: `${id}/review`,
       }),
+      providesTags: ['clientReview'],
     }),
     addClientReview: builder.mutation<IClientReview, { id: number; text: string }>({
       query: ({ id, text }) => ({
         url: `${id}/review?text=${text}`,
         method: 'POST',
       }),
+      invalidatesTags: ['clientReview'],
     }),
     updateClientReview: builder.mutation<IClientReview, { id: number; body: string }>({
       query: ({ id, body }) => ({
@@ -34,6 +38,7 @@ export const clientReviewAPI = createApi({
         method: 'PUT',
         body,
       }),
+      invalidatesTags: ['clientReview'],
     }),
   }),
 });
