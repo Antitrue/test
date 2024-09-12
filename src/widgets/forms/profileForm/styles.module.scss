@@ -42,6 +42,9 @@
 .avatarBtn.avatarBtn__left {
   left: calc(50% - 80px);
   background: white url('../../../shared/assets/images/profile-settings.svg') no-repeat 50% 50%;
+  @media screen and (width >= 570px) {
+    display: none;
+  }
 }
 .avatarBtn.avatarBtn__right {
   left: calc(50% + 60px);
