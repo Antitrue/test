@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-import { SignIn, Landing } from '../../pages';
+import { SignIn, Landing, Profile } from '../../pages';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -16,6 +16,10 @@ export const MainRoutes = createBrowserRouter([
       {
         path: 'sign-in',
         element: <SignIn />,
+      },
+      {
+        path: 'profile',
+        element: <Profile />,
       },
       {
         path: 'forum',
