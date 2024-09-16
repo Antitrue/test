@@ -1,7 +1,7 @@
 import { Flex } from 'antd';
 
 import Class from './Description.module.scss';
-import about_img from '../../../public/about_img1.svg';
+import about_img from '/about_img1.svg';
 
 function Description() {
   return (
