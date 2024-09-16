@@ -21,7 +21,7 @@ describe('Header component', () => {
   it('Header renders', () => {
     render(
       <MemoryRouter>
-        <Header />
+        <Header userLogged={false} />
       </MemoryRouter>
     );
 
