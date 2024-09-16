@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Header from './header';
+import ProfileForm from './profileForm';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -17,14 +17,14 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-describe('Header component', () => {
-  it('Header renders', () => {
+describe('ProfileForm component', () => {
+  it('ProfileForm renders', () => {
     render(
       <MemoryRouter>
-        <Header userLogged={false} />
+        <ProfileForm />
       </MemoryRouter>
     );
 
-    expect(screen.getByText('Register' || 'Аккаунт'));
+    expect(screen.getByText('Change Password'));
   });
 });

@@ -1,6 +1,5 @@
-import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
-
+import { Layout } from 'antd';
 import Header from '../widgets/header';
 import Footer from '../widgets/Footer/Footer';
 
@@ -8,13 +7,7 @@ const { Content: LayoutContent, Footer: LayoutFooter } = Layout;
 
 function App() {
   return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-        maxWidth: '1440px',
-        margin: '0 auto',
-        background: 'none',
-      }}>
+    <Layout>
       <Header />
       <LayoutContent>
         <Outlet />

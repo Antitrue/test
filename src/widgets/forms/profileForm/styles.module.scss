@@ -1,0 +1,99 @@
+@use '../../../shared/lib/useStyles.module.scss' as *;
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 15px;
+  padding-top: 75px;
+  max-width: 930px;
+  font-size: rem(18);
+  @media screen and (width <= 570px) {
+    padding-top: 30px;
+  }
+}
+
+.buttonBack {
+  padding-left: 30px;
+  background: url('../../../shared/assets/images/go-back-left.svg') no-repeat;
+}
+
+.avatar {
+  position: relative;
+  @media screen and (width <= 570px) {
+    padding-top: 30px;
+  }
+}
+
+.avatarImg {
+  margin: 0 auto;
+  display: block;
+  background: #f0f0f0;
+}
+
+.avatarBtn {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.avatarBtn.avatarBtn__left {
+  left: calc(50% - 80px);
+  background: white url('../../../shared/assets/images/profile-settings.svg') no-repeat 50% 50%;
+  @media screen and (width >= 570px) {
+    display: none;
+  }
+}
+.avatarBtn.avatarBtn__right {
+  left: calc(50% + 60px);
+  background: white url('../../../shared/assets/images/add-new-image.svg') no-repeat 50% 50%;
+}
+
+.passwordLink {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  @media screen and (width <= 570px) {
+    top: 105%;
+  }
+}
+
+.form {
+  margin: 50px 0 130px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  @media screen and (width <= 570px) {
+    margin: 50px 0 20px 0;
+  }
+}
+
+.inputs {
+  padding: 25px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  border: 1px solid #e3e0eb;
+  border-radius: 10px;
+  @media screen and (width <= 570px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input {
+  margin: 0;
+  max-height: 65px;
+}
+
+.button {
+  width: 335px;
+  height: 55px;
+  font-family: 'Open Sans', sans-serif;
+  @media screen and (width <= 570px) {
+    width: 275px;
+  }
+}
