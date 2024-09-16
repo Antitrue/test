@@ -1,0 +1,12 @@
+@use '../../shared/lib/useStyles.module.scss' as *;
+
+.newsSidebar > div {
+  @media screen and (width > 834px) {
+    margin-left: auto;
+    padding: 20px;
+    padding-right: 0;
+    max-width: 320px;
+    @include flex(column, start, 30px);
+    background: white;
+  }
+}
