@@ -12,7 +12,7 @@ interface IHeaderProps {
   userLogged?: boolean;
 }
 
-const Header: React.FC<IHeaderProps> = ({ userLogged = true }) => {
+const Header: React.FC<IHeaderProps> = ({ userLogged = false }) => {
   const [burgerMenu, useBurgerMenu] = useState(false);
 
   const userRole = userLogged ? (

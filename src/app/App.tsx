@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { Layout } from 'antd';
 import Header from '../widgets/header';
 import Footer from '../widgets/Footer/Footer';
 
