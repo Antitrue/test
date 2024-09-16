@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 55px 13px 72px 25px;
+}
+
+.labelStyle {
+  font-size: clamp(1rem, 0.5714rem + 2.1429vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  gap: 48px;
+
+  & > input {
+    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+    border-radius: 41px;
+    border: 2px solid #1eff4f;
+    padding: 20px 0 20px 35px;
+
+    &:focus {
+      outline: 2px solid #1890ff;
+    }
+  }
+}
+
+.formSubmitBtn {
+  align-self: center;
+  width: 240px;
+  height: 55px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 30px;
+}
+
+@media (width >= 768px) {
+  .form {
+    padding: 21px 39px 41px;
+  }
+}

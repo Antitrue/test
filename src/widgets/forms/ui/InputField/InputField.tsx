@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useFormContext, FieldError } from 'react-hook-form';
+import cn from 'classnames';
 
 import { eyeEnabled, eyeDisabled } from '../../../../shared/assets/';
 
 import { InputFieldProps } from './InputFieldTypes';
 import styles from './InputField.module.scss';
 
-export default function InputField({ type, name, label, placeholder, ...otherProps }: InputFieldProps) {
+function InputField({ type, name, label, placeholder, className = '', ...otherProps }: InputFieldProps) {
   const {
     register,
     formState: { errors },
@@ -21,7 +22,7 @@ export default function InputField({ type, name, label, placeholder, ...otherPro
   const errorMessage = errors?.[name] as FieldError | undefined;
 
   return (
-    <label className={styles.formLabel}>
+    <label className={cn(styles.formLabel, className)}>
       {label}
       <input
         type={type === 'password' && showPassword ? 'text' : type}
@@ -40,3 +41,5 @@ export default function InputField({ type, name, label, placeholder, ...otherPro
     </label>
   );
 }
+
+export default InputField;
