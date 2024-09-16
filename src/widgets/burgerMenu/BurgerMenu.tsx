@@ -1,6 +1,6 @@
 import Navigation from '../../shared/ui/button/navHeader';
-import UserAvatar from '../../shared/ui/button/userAvatar';
-import { Button, Divider } from 'antd';
+import { Button, Divider, Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 import styles from './styles.module.scss';
 import { useLocation, Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ const BurgerMenu: React.FC<props> = ({ closeMenu, burgerMenu }) => {
         <button className={styles.buttonBack} onClick={() => closeMenu()}>
           Назад
         </button>
-        <UserAvatar size={100} />
+        <Avatar size={100} icon={<UserOutlined style={{ color: '#3A4045' }} />} style={{ background: 'white' }} />
         <Link to={'/sign-in'}>
           <Button type='primary' className={styles.button}>
             Sign In
