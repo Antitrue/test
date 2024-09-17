@@ -20,7 +20,7 @@ const ClientNewsSidebar = () => {
         disableOnInteraction: false,
       }}
       breakpoints={{
-        834: {
+        901: {
           slidesPerView: 3,
         },
         0: {

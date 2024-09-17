@@ -6,6 +6,7 @@
 
 .sidebar {
   width: 300px;
+  background-color: rgb(254 254 254 / 100%);
 
   @media screen and (width <= 780px) {
     width: 100px;
