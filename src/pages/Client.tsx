@@ -1,3 +1,4 @@
+import ClientNewsSidebar from '../widgets/client/ClientNewsSidebar';
 import PetSidebar from '../widgets/client/PetSidebar';
 import { defaultCat } from '../shared/assets';
 
@@ -23,6 +24,7 @@ const pets = [
 function Client() {
   return (
     <div>
+      <ClientNewsSidebar />
       <PetSidebar pets={pets} />
     </div>
   );
