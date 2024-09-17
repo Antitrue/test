@@ -39,7 +39,7 @@
     align-items: center;
     background: #5496d4;
 
-    @media screen and (width >= 781px) {
+    @media screen and (width > 780px) {
       display: none;
     }
   }

@@ -6,7 +6,8 @@
   padding-top: 75px;
   max-width: 930px;
   font-size: rem(18);
-  @media screen and (width <= 570px) {
+
+  @media screen and (width <= 780px) {
     padding-top: 30px;
   }
 }
@@ -18,7 +19,8 @@
 
 .avatar {
   position: relative;
-  @media screen and (width <= 570px) {
+
+  @media screen and (width <= 780px) {
     padding-top: 30px;
   }
 }
@@ -42,10 +44,12 @@
 .avatarBtn.avatarBtn__left {
   left: calc(50% - 80px);
   background: white url('../../../shared/assets/images/profile-settings.svg') no-repeat 50% 50%;
-  @media screen and (width >= 570px) {
+
+  @media screen and (width >= 780px) {
     display: none;
   }
 }
+
 .avatarBtn.avatarBtn__right {
   left: calc(50% + 60px);
   background: white url('../../../shared/assets/images/add-new-image.svg') no-repeat 50% 50%;
@@ -55,19 +59,21 @@
   position: absolute;
   right: 0;
   top: 40%;
-  @media screen and (width <= 570px) {
+
+  @media screen and (width <= 780px) {
     top: 105%;
   }
 }
 
 .form {
-  margin: 50px 0 130px 0;
+  margin: 50px 0 130px;
   display: flex;
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  @media screen and (width <= 570px) {
-    margin: 50px 0 20px 0;
+
+  @media screen and (width <= 780px) {
+    margin: 50px 0 20px;
   }
 }
 
@@ -79,7 +85,8 @@
   gap: 25px;
   border: 1px solid #e3e0eb;
   border-radius: 10px;
-  @media screen and (width <= 570px) {
+
+  @media screen and (width <= 780px) {
     grid-template-columns: 1fr;
   }
 }
@@ -93,7 +100,8 @@
   width: 335px;
   height: 55px;
   font-family: 'Open Sans', sans-serif;
-  @media screen and (width <= 570px) {
+
+  @media screen and (width <= 780px) {
     width: 275px;
   }
 }
