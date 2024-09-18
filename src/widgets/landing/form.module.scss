@@ -25,7 +25,7 @@
   border-radius: 8px;
   background: #f6f6f6;
 
-  @media screen and (width <= 930px) {
+  @media screen and (width <= 900px) {
     gap: 10px;
   }
 
@@ -37,7 +37,7 @@
     background-color: rgb(0 0 0 / 0%);
   }
 
-  @media screen and (width <= 580px) {
+  @media screen and (width <= 780px) {
     padding: 22px 10px;
     gap: 50px;
   }
@@ -82,7 +82,7 @@
   border: 1px solid #ff00e5;
   background: white;
 
-  @media screen and (width <= 580px) {
+  @media screen and (width <= 780px) {
     height: auto;
     width: auto;
   }
@@ -92,7 +92,7 @@
   height: 450px;
   width: auto;
 
-  @media screen and (width <= 580px) {
+  @media screen and (width <= 780px) {
     display: none;
   }
 }
@@ -134,7 +134,7 @@
     color: #ff4d4f;
   }
 
-  @media screen and (width <= 580px) {
+  @media screen and (width <= 780px) {
     margin: 0;
     padding: 20px;
     height: auto;

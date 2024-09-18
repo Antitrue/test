@@ -10,13 +10,15 @@ function App() {
   return (
     <Layout
       style={{
-        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
         maxWidth: '1440px',
+        minHeight: '100vh',
         margin: '0 auto',
         background: 'none',
       }}>
       <Header />
-      <LayoutContent>
+      <LayoutContent style={{ display: 'flex', flexDirection: 'column' }}>
         <Outlet />
       </LayoutContent>
       <LayoutFooter style={{ background: 'none', padding: 0 }}>

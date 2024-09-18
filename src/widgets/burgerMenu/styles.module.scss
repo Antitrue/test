@@ -15,6 +15,7 @@
   border-right: 1px solid #7e8b96;
   background-color: white;
   transition: transform 0.5s;
+  z-index: 2;
 
   @media screen and (width >= 781px) {
     display: none;

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-import { SignIn, SignUp, Landing } from '../../pages';
+import { SignIn, SignUp, Landing, Client, Profile } from '../../pages';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -22,8 +22,16 @@ export const MainRoutes = createBrowserRouter([
         element: <SignUp />,
       },
       {
+        path: 'profile',
+        element: <Profile />,
+      },
+      {
         path: 'forum',
         element: <div>Страничка Forum</div>,
+      },
+      {
+        path: 'client',
+        element: <Client />,
       },
     ],
   },
