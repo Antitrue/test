@@ -13,7 +13,7 @@ const RegForm = ({}) => {
   const methods = useForm<InputsTypes>({
     mode: 'onBlur',
     defaultValues: {
-      full: '',
+      fullname: '',
       email: '',
       password: '',
       isAgree: true,
@@ -24,12 +24,12 @@ const RegForm = ({}) => {
     <FormProvider {...methods}>
       <CardWrapper>
         <form className={styles.form}>
-          <FormHeader isLogin />
-          <InputField type='full' label='Full Name' name='full' placeholder='John Doe' />
+          <FormHeader isLogin={false} />
+          <InputField type='fullname' label='Full Name' name='fullname' placeholder='John Doe' />
           <InputField type='email' label='Email Adress' name='email' placeholder='johndoe@gmail.com' />
           <InputField type='password' label='Password' name='password' placeholder='*******' />
           <InputField type='password' label='Confirm Password' name='password' placeholder='*******' />
-          <CheckboxField isLogin />
+          <CheckboxField isLogin={false} />
           <FormFooter isLogin={false} linkTo='/sign-in' />
         </form>
       </CardWrapper>

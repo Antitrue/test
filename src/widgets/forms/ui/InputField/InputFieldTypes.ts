@@ -1,5 +1,5 @@
 export type InputsTypes = {
-  full: string;
+  fullname: string;
   email: string;
   password: string;
   isAgree: boolean;
