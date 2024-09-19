@@ -6,14 +6,14 @@ import FormFooter from '../ui/FormFooter/FormFooter';
 import InputField from '../ui/InputField/InputField';
 import CheckboxField from '../ui/CheckboxField/CheckboxField';
 
-import { AuthPorps } from './AuthFormProps';
 import { InputsTypes } from '../ui/InputField/InputFieldTypes';
-import styles from './AuthForm.module.scss';
+import styles from './RegForm.module.scss';
 
-export default function AuthForm({ onSubmit }: AuthPorps) {
+const RegForm = ({}) => {
   const methods = useForm<InputsTypes>({
     mode: 'onBlur',
     defaultValues: {
+      fullname: '',
       email: '',
       password: '',
       isAgree: true,
@@ -23,14 +23,18 @@ export default function AuthForm({ onSubmit }: AuthPorps) {
   return (
     <FormProvider {...methods}>
       <CardWrapper>
-        <form className={styles.form} onSubmit={methods.handleSubmit(onSubmit)}>
-          <FormHeader isLogin />
+        <form className={styles.form}>
+          <FormHeader isLogin={false} />
+          <InputField type='fullname' label='Full Name' name='fullname' placeholder='John Doe' />
           <InputField type='email' label='Email Adress' name='email' placeholder='johndoe@gmail.com' />
           <InputField type='password' label='Password' name='password' placeholder='*******' />
-          <CheckboxField isLogin />
-          <FormFooter isLogin linkTo='/sign-up' />
+          <InputField type='password' label='Confirm Password' name='password' placeholder='*******' />
+          <CheckboxField isLogin={false} />
+          <FormFooter isLogin={false} linkTo='/sign-in' />
         </form>
       </CardWrapper>
     </FormProvider>
   );
-}
+};
+
+export default RegForm;
