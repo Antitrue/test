@@ -2,21 +2,29 @@ import Navigation from '../../shared/ui/button/navHeader';
 import BurgerMenu from '../burgerMenu';
 import UserRole from './UserRole';
 import { Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
+import { useLogoutUserMutation } from '../../shared/services/api/auth/authentication.api';
+import { useSelector } from 'react-redux';
+import { IStateAuth } from '../../shared/services/api/auth/authenticationSlice';
 
-interface IHeaderProps {
-  userLogged?: boolean;
-}
-
-const Header: React.FC<IHeaderProps> = ({ userLogged = false }) => {
+const Header: React.FC = () => {
+  const { role, isAuth } = useSelector((state: { authenticationSlice: IStateAuth }) => state.authenticationSlice);
   const [burgerMenu, useBurgerMenu] = useState(false);
+  const [OutLoginUser] = useLogoutUserMutation();
 
-  const userRole = userLogged ? (
-    <UserRole hasNotifications={true} userRole={'Client'} />
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await OutLoginUser().unwrap();
+    navigate('/');
+  };
+
+  const userSection = isAuth ? (
+    <UserRole hasNotifications={true} userRole={role} onLogout={handleLogout} />
   ) : (
     <section className={styles.buttons}>
       <Link to={'/sign-in'}>
@@ -32,8 +40,8 @@ const Header: React.FC<IHeaderProps> = ({ userLogged = false }) => {
     </section>
   );
 
-  const mobileUserRole = userLogged ? (
-    <UserRole hasNotifications={true} userRole={'Client'} />
+  const mobileUserRole = isAuth ? (
+    <UserRole hasNotifications={true} userRole={role} onLogout={handleLogout} />
   ) : (
     <Link to={'/sign-in'}>
       <button className={styles.buttonAuth}>Аккаунт</button>
@@ -46,7 +54,7 @@ const Header: React.FC<IHeaderProps> = ({ userLogged = false }) => {
         <div className={styles.desktop}>
           <Link to={'/'} className={styles.logo} />
           <Navigation />
-          {userRole}
+          {userSection}
         </div>
         <div className={styles.mobile}>
           <button className={styles.buttonBurger} onClick={() => useBurgerMenu(true)}></button>

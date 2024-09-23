@@ -11,8 +11,13 @@ function AuthProcess() {
 
   const handleSubmit: SubmitHandler<InputsTypes> = async data => {
     const { email: username, password, isAgree: rememberMe } = data;
-    loginUser({ body: { username, password }, rememberMe });
-    navigate('/');
+
+    try {
+      const result = await loginUser({ body: { username, password }, rememberMe }).unwrap();
+      navigate(`/${result.role.toLocaleLowerCase()}`);
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
   };
 
   return <AuthForm onSubmit={handleSubmit} />;
