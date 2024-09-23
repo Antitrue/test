@@ -10,9 +10,9 @@ export const vaccinationApi = createApi({
     prepareHeaders,
   }),
   endpoints: build => ({
-    getAllVaccinations: build.query<IVac, number>({
+    getAllVaccinations: build.query<IVac[], number>({
       query: id => ({
-        url: 'vaccination',
+        url: '/vaccination',
         params: {
           petId: id,
         },
@@ -21,13 +21,13 @@ export const vaccinationApi = createApi({
     }),
     getVaccination: build.query<IVac, number>({
       query: id => ({
-        url: `vaccination/${id}`,
+        url: `/vaccination/${id}`,
       }),
       providesTags: ['vaccination'],
     }),
     addProcedure: build.mutation<IVac, IAddProcedure>({
       query: ({ petId, body }) => ({
-        url: 'vaccination',
+        url: '/vaccination',
         method: 'POST',
         params: {
           petId: petId,
@@ -38,7 +38,7 @@ export const vaccinationApi = createApi({
     }),
     updateProcedure: build.mutation<IVac, IUpdateProcedure>({
       query: ({ id, body }) => ({
-        url: `vaccination/${id}`,
+        url: `/vaccination/${id}`,
         method: 'PUT',
         body,
       }),
@@ -46,12 +46,17 @@ export const vaccinationApi = createApi({
     }),
     deleteProcedure: build.mutation<IVac, number>({
       query: id => ({
-        url: `vaccination/${id}`,
+        url: `/vaccination/${id}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['vaccination'],
     }),
   }),
 });
-// const { useDeleteProcedureMutation, useAddProcedureMutation, useUpdateProcedureMutation, useGetVaccinationQuery, useGetAllVaccinationsQuery } =
-//   vaccinationApi;
+export const {
+  useDeleteProcedureMutation,
+  useAddProcedureMutation,
+  useUpdateProcedureMutation,
+  useGetVaccinationQuery,
+  useGetAllVaccinationsQuery,
+} = vaccinationApi;
