@@ -10,7 +10,7 @@ export const petClientAPI = createApi({
     prepareHeaders,
   }),
   endpoints: build => ({
-    getAllPets: build.query<IPetClient[], null>({
+    getAllPets: build.query<IPetClient[], void>({
       query: () => ({
         url: 'pet',
       }),
