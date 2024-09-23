@@ -1,12 +1,12 @@
-export interface IPetClient {
+export type IPetClient = {
   id: number;
   name: string;
   avatar: string;
   birthDay: string;
   petType: string;
-}
+};
 
-export interface IPetClientSpecific_1 {
+export type IPetClientSpecific_1 = {
   name: string;
   avatar: string;
   birthDay: string;
@@ -17,8 +17,8 @@ export interface IPetClientSpecific_1 {
   size: string;
   weight: number;
   description: string;
-}
-export interface IPetClientSpecific_2 {
+};
+export type IPetClientSpecific_2 = {
   petId: number;
   body: {
     name: string;
@@ -31,4 +31,4 @@ export interface IPetClientSpecific_2 {
     weight: number;
     description: string;
   };
-}
+};
