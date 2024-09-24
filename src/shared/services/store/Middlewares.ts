@@ -4,6 +4,7 @@ import { clientReviewAPI } from '../api/client/clientReview.api';
 import { petContactAPI } from '../api/client/petContact.api';
 import { clientNewsAPI } from '../api/client/clientNews.api';
 import { topicApi } from '../api/user/topic.api';
+import { reproductionAPI } from '../api/client/reproduction.api.ts';
 
 export const middlewares = [
   authAPI.middleware,
@@ -12,4 +13,5 @@ export const middlewares = [
   clientReviewAPI.middleware,
   userCommentAPI.middleware,
   topicApi.middleware,
+  reproductionAPI.middleware,
 ];
