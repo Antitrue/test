@@ -1,4 +1,4 @@
-import ProfileForm from '../widgets/forms/profileForm';
+import { ProfileForm } from '../widgets';
 
 const Profile = () => {
   return <ProfileForm />;

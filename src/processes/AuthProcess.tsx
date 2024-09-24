@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useLoginUserMutation } from '../shared/services/api/auth/authentication.api';
 import { InputsTypes } from '../widgets/forms/ui/InputField/InputFieldTypes';
-import AuthForm from '../widgets/forms/AuthForm/AuthForm';
+import { AuthForm } from '../widgets';
 
 function AuthProcess() {
   const [loginUser] = useLoginUserMutation();

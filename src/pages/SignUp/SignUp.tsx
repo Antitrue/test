@@ -1,4 +1,4 @@
-import RegForm from '../../widgets/forms/RegForm/RegForm';
+import { RegForm } from '../../widgets';
 
 function SignUp() {
   return (

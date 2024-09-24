@@ -1,5 +1,4 @@
-import ClientNewsSidebar from '../widgets/client/ClientNewsSidebar';
-import PetSidebar from '../widgets/client/PetSidebar';
+import { ClientNewsSidebar, PetSidebar } from '../widgets';
 import { defaultCat } from '../shared/assets';
 
 import styles from './Client.module.scss';
