@@ -5,9 +5,9 @@ export default function FormHeader({ isLogin }: { isLogin: boolean }) {
   return (
     <div className={styles.formHeader}>
       <img className={styles.formImage} src={formLogo} alt='formLogo' />
-      <h2 className={styles.formTitle}>{isLogin ? 'Log in to your Account' : ''}</h2>
+      <h2 className={styles.formTitle}>{isLogin ? 'Log in to your Account' : 'Create an Account'}</h2>
       <p className={`${styles.formText} ${isLogin ? styles.hideOnSmallScreen : ''}`}>
-        {isLogin ? 'Welcome back, please enter your details.' : ''}
+        {isLogin ? 'Welcome back, please enter your details.' : 'Sign up now to get started with an account.'}
       </p>
     </div>
   );
