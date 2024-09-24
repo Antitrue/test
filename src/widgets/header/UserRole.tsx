@@ -4,19 +4,25 @@ import cn from 'classnames';
 
 import styles from './UserRole.module.scss';
 import { logoUserMini } from '../../shared/assets';
+import { Link } from 'react-router-dom';
 
 interface IUserRoleProps {
   hasNotifications: boolean;
-  userRole: string;
+  userRole: string | null;
+  onLogout: () => void;
 }
 
-function UserRole({ hasNotifications, userRole }: IUserRoleProps) {
+function UserRole({ hasNotifications, userRole, onLogout }: IUserRoleProps) {
   const [modalStatus, setModalStatus] = useState(false);
 
   const modalWindow = modalStatus ? (
     <Flex vertical className={styles.modal_window}>
-      <a className={styles.modal_window__profile}>Profile</a>
-      <button className={styles.modal_window__exit}>Выйти</button>
+      <Link to={`/profile`} className={styles.modal_window__profile}>
+        Profile
+      </Link>
+      <button className={styles.modal_window__exit} onClick={() => onLogout()}>
+        Выйти
+      </button>
     </Flex>
   ) : null;
 

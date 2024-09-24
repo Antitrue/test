@@ -124,6 +124,7 @@
   }
 
   .modal_window {
+    z-index: 2;
     justify-content: space-evenly;
     position: absolute;
     top: 50px;
