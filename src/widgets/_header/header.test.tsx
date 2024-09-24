@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Header from './header';
+import Header from './_Header';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from '../../shared/services/store/store';
