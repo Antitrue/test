@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-import { SignIn, SignUp, Landing, Client, Profile } from '../../pages';
+import { SignIn, SignUp, Landing, Client, Profile, Admin, Manager, Doctor } from '../../pages';
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -32,6 +32,18 @@ export const MainRoutes = createBrowserRouter([
       {
         path: 'client',
         element: <Client />,
+      },
+      {
+        path: 'admin',
+        element: <Admin />,
+      },
+      {
+        path: 'manager',
+        element: <Manager />,
+      },
+      {
+        path: 'doctor',
+        element: <Doctor />,
       },
     ],
   },
