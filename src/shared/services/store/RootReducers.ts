@@ -5,6 +5,7 @@ import { clientReviewAPI } from '../api/client/clientReview.api';
 import { petContactAPI } from '../api/client/petContact.api';
 import { clientNewsAPI } from '../api/client/clientNews.api';
 import { topicApi } from '../api/user/topic.api';
+import { reproductionAPI } from '../api/client/reproduction.api.ts';
 
 const rootReducers = combineReducers({
   authenticationSlice: authenticationSlice.reducer,
@@ -14,6 +15,7 @@ const rootReducers = combineReducers({
   [petContactAPI.reducerPath]: petContactAPI.reducer,
   [clientNewsAPI.reducerPath]: clientNewsAPI.reducer,
   [topicApi.reducerPath]: topicApi.reducer,
+  [reproductionAPI.reducerPath]: reproductionAPI.reducer,
 });
 
 export default rootReducers;
