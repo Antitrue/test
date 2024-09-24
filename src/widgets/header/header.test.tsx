@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import Header from './header';
-
 import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from '../../shared/services/store/store';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -9,8 +10,8 @@ Object.defineProperty(window, 'matchMedia', {
     matches: false,
     media: query,
     onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
@@ -21,10 +22,13 @@ describe('Header component', () => {
   it('Header renders', () => {
     render(
       <MemoryRouter>
-        <Header userLogged={false} />
+        <Provider store={store}>
+          <Header />
+        </Provider>
       </MemoryRouter>
     );
 
-    expect(screen.getByText('Register' || 'Аккаунт'));
+    const elements = screen.getAllByText(/Register|Аккаунт/);
+    expect(elements.length).toBeGreaterThan(0);
   });
 });

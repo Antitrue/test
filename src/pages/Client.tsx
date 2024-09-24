@@ -3,6 +3,8 @@ import PetSidebar from '../widgets/client/PetSidebar';
 import { defaultCat } from '../shared/assets';
 
 import styles from './Client.module.scss';
+import { useLocation } from 'react-router-dom';
+import useNavigationClient from '../shared/hooks/useNavigationClient';
 
 const pets = [
   {
@@ -24,6 +26,9 @@ const pets = [
 ];
 
 function Client() {
+  const location = useLocation();
+  useNavigationClient(location.pathname, 'CLIENT');
+
   return (
     <div className={styles.container}>
       <PetSidebar pets={pets} />

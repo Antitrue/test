@@ -4,7 +4,8 @@ import UserRole from './UserRole';
 
 describe('UserRole component', () => {
   it('UserRole renders', () => {
-    render(<UserRole hasNotifications={true} userRole='Client' />);
+    const mockOnLogout = jest.fn();
+    render(<UserRole hasNotifications={true} userRole='Client' onLogout={mockOnLogout} />);
 
     expect(screen.getByText('Client')).toBeInTheDocument();
   });
