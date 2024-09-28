@@ -15,9 +15,9 @@ const RadioField = ({ name, elements, label, register, errors }: RadioFieldProps
   return (
     <div className={cl.radioContainer}>
       <p className={cl.fieldTitle}> {label}</p>
-      <div className={name === 'gender' ? '' : cl.sizeContainer}>
+      <div className={name === 'gender' ? cl.genderContainer : cl.sizeContainer}>
         {elements.map<ReactNode>(item => (
-          <div key={item} className={name === 'gender' ? cl.genderContainer : cl.sizeContainer}>
+          <div key={item}>
             <label className={name === 'gender' ? cl.genderLabel : cl.sizeLabel}>
               <input
                 type='radio'
