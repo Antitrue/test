@@ -1,33 +1,43 @@
 import cl from './PetInputFiled.module.scss';
-import { useState } from 'react';
-import Button from '../../ui/Button/Button';
-import arrow from '../../../../shared/assets/images/arrow.svg';
+import { useEffect, useState } from 'react';
 import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 
-interface PetInputProps {
-  name: string;
-  type: string;
+type PetInputProps = {
   label: string;
+  type: string;
+  name: string;
   placeholder: string;
   register: UseFormRegister<FieldValues>;
   elements?: string[];
   errors: FieldErrors;
-}
+};
 
-const PetInputFiled = ({ name, type, label, placeholder, register, elements, errors }: PetInputProps) => {
-  const [dropDown, setDropDown] = useState(false);
+const PetInputFiled = ({ label, name, type, register, placeholder, elements, errors }: PetInputProps) => {
   const [selectValue, setSelectValue] = useState('');
 
-  const toggleDropdown = () => setDropDown(prev => !prev);
-  const changeSelectValue = (selectedItem: string) => {
-    setSelectValue(selectedItem);
-    setDropDown(false);
+  const [inputType, setInputType] = useState(type);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (type === 'date') {
+        setInputType(window.innerWidth < 780 ? 'date' : 'text');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectValue(event.target.value);
   };
 
   const errorMessage = errors[name] as FieldError | undefined;
 
   return (
-    <label className={cl.inputContainer}>
+    <div className={cl.inputContainer}>
       <p className={cl.fieldTitle}>{label}</p>
       {type === 'text' && name !== 'birthDay' && name !== 'weight' && (
         <input
@@ -39,29 +49,20 @@ const PetInputFiled = ({ name, type, label, placeholder, register, elements, err
       )}
       {type === 'select' && (
         <div className={cl.select}>
-          <input
-            type='text'
+          <select
+            style={{ color: selectValue ? '' : 'rgb(207 205 214)' }}
             className={`${cl.inputSelect} ${errorMessage && !selectValue ? cl.invalidInput : ''}`}
-            placeholder={placeholder}
-            readOnly
             value={selectValue}
-            {...register(name, { required: 'Пожалуйста выберите значение' })}
-          />
-          {dropDown && (
-            <div className={cl.types}>
-              {elements!.map(item => (
-                <span key={item} className={cl.typeAnimal} onClick={() => changeSelectValue(item)}>
-                  {item}
-                </span>
-              ))}
-            </div>
-          )}
-          <Button
-            className={cl.arrow}
-            type='button'
-            tag={<img src={arrow} alt='select arrow' />}
-            onClick={toggleDropdown}
-          />
+            {...register(name, { required: 'Пожалуйста выберите значение', onChange: handleSelectChange })}>
+            <option value='' disabled>
+              {placeholder}
+            </option>
+            {elements!.map(item => (
+              <option key={item} value={item} className={cl.typeAnimal}>
+                {item}
+              </option>
+            ))}
+          </select>
         </div>
       )}
       {type === 'url' && (
@@ -85,19 +86,20 @@ const PetInputFiled = ({ name, type, label, placeholder, register, elements, err
           {...register(name, {
             required: 'Пожалуйста заполните это поле',
             pattern: { value: /^[0-9]*$/, message: 'Введите только цифры' },
+            validate: value => parseInt(value) <= 70 || 'Максимально возможное значение 70 кг',
           })}
         />
       )}
-      {name === 'birthDay' && (
+      {type === 'date' && (
         <>
           <input
-            type='text'
+            type={inputType}
             placeholder={placeholder}
             className={`${cl.input} ${errorMessage ? cl.invalidInput : ''}`}
             {...register(name, {
-              required: true,
+              required: 'Пожалуйста заполните это поле',
               pattern: {
-                value: /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(\d{2}|\d{4})$/,
+                value: /^(?:\d{4}-\d{2}-\d{2}|(?:0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(\d{2}|\d{4}))$/,
                 message: 'Неверный формат даты',
               },
             })}
@@ -111,8 +113,8 @@ const PetInputFiled = ({ name, type, label, placeholder, register, elements, err
           {...register(name, { required: 'Пожалуйста заполните это поле' })}
         />
       )}
-      {errorMessage && !selectValue && <span className={cl.errorMessage}>{errorMessage.message}</span>}
-    </label>
+      {errorMessage && <span className={cl.errorMessage}>{errorMessage.message}</span>}
+    </div>
   );
 };
 
