@@ -33,7 +33,7 @@ const NewPetForm: FC = () => {
   return (
     <>
       <div className={styles.overlay}></div>
-      <div className={styles.container}>
+      <div className={`${styles.container} ${Object.keys(errors).length ? styles.errorContainer : ''}`}>
         <h3 className={styles.head}>Добавить питомца</h3>
         <Button className={styles.close} tag={<img src={close} alt='Close' />} />
         <form
@@ -41,96 +41,97 @@ const NewPetForm: FC = () => {
           onSubmit={handleSubmit(data => {
             const translatedData = {
               ...data,
+              birthDay: data.birthDay.split('.').reverse().join('-'),
               petType: PetType[data.petType as keyof typeof PetType],
               gender: Gender[data.gender as keyof typeof Gender],
               size: Size[data.size as keyof typeof Size],
             };
             console.log(translatedData);
           })}>
-          <label className={styles.textLabel}>
+          <div className={styles.fieldsContainer}>
             <PetInputFiled
               name='name'
-              type='text'
               label='Имя питомца*'
               placeholder='Имя'
+              type='text'
               register={register}
               errors={errors}
             />
             <PetInputFiled
               name='petType'
-              type='select'
               label='Тип питомца*'
               placeholder='Выберите тип питомца'
+              type='select'
               elements={['Кошка', 'Собака', 'Хомяк']}
               register={register}
               errors={errors}
             />
             <PetInputFiled
               name='avatar'
-              type='url'
               label='Аватар*'
               placeholder='avatarUrl'
+              type='url'
               register={register}
               errors={errors}
             />
             <PetInputFiled
               name='birthDay'
-              type='text'
               label='Дата рождения*'
               placeholder='дд.мм.гггг'
+              type='date'
               register={register}
               errors={errors}
             />
             <PetInputFiled
               name='breed'
-              type='select'
               label='Порода*'
-              elements={['Вислоухая', 'Какая то порода', 'Какая то порода']}
               placeholder='Выберите породу'
+              elements={['Вислоухая', 'Какая-то порода...', 'Какая-то порода...']}
+              type='select'
               register={register}
               errors={errors}
             />
             <RadioField
               name='gender'
-              elements={['Мужской', 'Женский']}
               label='Гендер*'
+              elements={['Мужской', 'Женский']}
               register={register}
               errors={errors}
             />
             <PetInputFiled
               name='weight'
-              type='text'
               label='Вес*'
               placeholder='Вес'
+              type='text'
               register={register}
               errors={errors}
             />
             <PetInputFiled
               name='color'
-              type='select'
               label='Цвет*'
-              elements={['Рыжая', 'Черная', 'Белая']}
               placeholder='Выберите цвет'
+              elements={['Рыжая', 'Черная', 'Белая']}
+              type='select'
               register={register}
               errors={errors}
             />
             <RadioField
               name='size'
-              elements={['Маленький', 'Средний', 'Большой']}
               label='Размер*'
+              elements={['Маленький', 'Средний', 'Большой']}
               register={register}
               errors={errors}
             />
             <PetInputFiled
               name='description'
-              type='textarea'
               label='Описание'
               placeholder='Описание'
+              type='textarea'
               register={register}
               errors={errors}
             />
-          </label>
-          * - Обязательно для заполнения
+          </div>
+          <p className={styles.required}>* - Обязательно для заполнения</p>
           <Button className={styles.create} description='Создать' type='submit' />
         </form>
       </div>
