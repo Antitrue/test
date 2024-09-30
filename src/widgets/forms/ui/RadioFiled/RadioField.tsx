@@ -1,14 +1,7 @@
 import cl from './RadioField.module.scss';
 import { ReactNode } from 'react';
-import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-
-interface RadioFieldProps {
-  name: string;
-  elements: string[];
-  label: string;
-  register: UseFormRegister<FieldValues>;
-  errors: FieldErrors;
-}
+import { FieldError } from 'react-hook-form';
+import { RadioFieldProps } from './types.ts';
 
 const RadioField = ({ name, elements, label, register, errors }: RadioFieldProps) => {
   const errorMessage = errors?.[name] as FieldError | undefined;

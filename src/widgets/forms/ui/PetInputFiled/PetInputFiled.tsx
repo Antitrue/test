@@ -1,16 +1,7 @@
 import cl from './PetInputFiled.module.scss';
-import { useEffect, useState } from 'react';
-import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
-
-type PetInputProps = {
-  label: string;
-  type: string;
-  name: string;
-  placeholder: string;
-  register: UseFormRegister<FieldValues>;
-  elements?: string[];
-  errors: FieldErrors;
-};
+import { ChangeEvent, useEffect, useState } from 'react';
+import { PetInputProps } from './types.ts';
+import { FieldError } from 'react-hook-form';
 
 const PetInputFiled = ({ label, name, type, register, placeholder, elements, errors }: PetInputProps) => {
   const [selectValue, setSelectValue] = useState('');
@@ -30,7 +21,7 @@ const PetInputFiled = ({ label, name, type, register, placeholder, elements, err
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectValue(event.target.value);
   };
 
@@ -44,7 +35,10 @@ const PetInputFiled = ({ label, name, type, register, placeholder, elements, err
           type='text'
           placeholder={placeholder}
           className={`${cl.input} ${errorMessage ? cl.invalidInput : ''}`}
-          {...register(name, { required: 'Пожалуйста заполните это поле' })}
+          {...register(name, {
+            required: 'Пожалуйста заполните это поле',
+            pattern: { value: /^[A-Za-zА-Яа-яЁё\s]+$/, message: 'В вашем имени не должно быть цифр' },
+          })}
         />
       )}
       {type === 'select' && (

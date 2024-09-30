@@ -1,27 +1,11 @@
 import styles from './NewPetForm.module.scss';
 import { FC } from 'react';
-import close from '../../../shared/assets/images/close.svg';
+import { close } from '../../../shared/assets/';
 import PetInputFiled from '../ui/PetInputFiled/PetInputFiled.tsx';
-import Button from '../ui/Button/Button.tsx';
 import { useForm } from 'react-hook-form';
 import RadioField from '../ui/RadioFiled/RadioField.tsx';
-
-enum PetType {
-  Кошка = 'CAT',
-  Собака = 'DOG',
-  Хомяк = 'HAMSTER',
-}
-
-enum Gender {
-  Мужской = 'MALE',
-  Женский = 'FEMALE',
-}
-
-enum Size {
-  Маленький = 'SMALL',
-  Средний = 'MEDIUM',
-  Большой = 'LARGE',
-}
+import Button from '../../../shared/ui/button/Button.tsx';
+import { PetType, Gender, Size } from './types.ts';
 
 const NewPetForm: FC = () => {
   const {
@@ -35,7 +19,9 @@ const NewPetForm: FC = () => {
       <div className={styles.overlay}></div>
       <div className={`${styles.container} ${Object.keys(errors).length ? styles.errorContainer : ''}`}>
         <h3 className={styles.head}>Добавить питомца</h3>
-        <Button className={styles.close} tag={<img src={close} alt='Close' />} />
+        <Button className={styles.close} type='button'>
+          <img src={close} alt='Close' />
+        </Button>
         <form
           className={styles.form}
           onSubmit={handleSubmit(data => {
@@ -62,7 +48,7 @@ const NewPetForm: FC = () => {
               label='Тип питомца*'
               placeholder='Выберите тип питомца'
               type='select'
-              elements={['Кошка', 'Собака', 'Хомяк']}
+              elements={['Кошка', 'Собака']}
               register={register}
               errors={errors}
             />
@@ -132,7 +118,9 @@ const NewPetForm: FC = () => {
             />
           </div>
           <p className={styles.required}>* - Обязательно для заполнения</p>
-          <Button className={styles.create} description='Создать' type='submit' />
+          <Button className={styles.create} type='submit'>
+            Создать
+          </Button>
         </form>
       </div>
     </>
