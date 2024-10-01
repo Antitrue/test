@@ -89,12 +89,17 @@
   margin: auto 0;
   padding-left: 5px;
   font-size: rem(14);
+  font-weight: 700;
+  color: rgb(0 0 0 / 100%);
+  line-height: 1.36;
 }
 
 .content {
   grid-area: content;
   padding-left: 5px;
   font-size: rem(10);
+  color: rgb(0 0 0 / 50%);
+  line-height: 1.36;
 }
 
 .mark {

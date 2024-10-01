@@ -9,7 +9,7 @@ export const clientNewsAPI = createApi({
   tagTypes: ['clientNews'],
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl, prepareHeaders }),
   endpoints: build => ({
-    getClientNews: build.query<clientNewsResponse, void>({
+    getClientNews: build.query<clientNewsResponse[], void>({
       query: () => ({
         url: 'client/news',
         method: 'GET',
