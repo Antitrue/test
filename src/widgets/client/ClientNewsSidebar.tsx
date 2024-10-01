@@ -2,6 +2,7 @@ import NewsData from './NewsData';
 import NewsSection from '../../shared/ui/button/newsSection/NewsSection';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { useGetClientNewsQuery } from '../../shared/services/api/client/clientNews.api';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -10,6 +11,7 @@ import { useEffect } from 'react';
 
 const ClientNewsSidebar = () => {
   const tablet = window.matchMedia('(max-width: 834px)');
+  const { data = [], isError, isLoading } = useGetClientNewsQuery();
 
   useEffect(() => console.log(tablet.matches), [tablet.matches]);
 
@@ -33,13 +35,14 @@ const ClientNewsSidebar = () => {
       modules={[Autoplay]}
       className={styles.newsSidebar}>
       <SwiperSlide>
-        <NewsSection topic={'Новости'} articles={NewsData.news} />
+        {isError ? <div>Data news is error</div> : null}
+        {data ? <NewsSection isLoading={isLoading} topic={'Новости'} articles={data} /> : <div>There aren`t news</div>}
       </SwiperSlide>
       <SwiperSlide>
-        <NewsSection topic={'Акции'} articles={NewsData.specialOffer} />
+        <NewsSection isLoading={isLoading} topic={'Акции'} articles={NewsData.specialOffer} />
       </SwiperSlide>
       <SwiperSlide>
-        <NewsSection topic={'Скидки'} articles={NewsData.sale} />
+        <NewsSection isLoading={isLoading} topic={'Скидки'} articles={NewsData.sale} />
       </SwiperSlide>
     </Swiper>
   );
