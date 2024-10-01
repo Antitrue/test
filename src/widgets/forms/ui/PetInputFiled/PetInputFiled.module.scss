@@ -1,0 +1,267 @@
+.inputContainer {
+  display: flex;
+  flex-flow: column wrap;
+
+  .fieldTitle {
+    margin-top: 18px;
+    margin-left: 26px;
+  }
+
+  .input {
+    width: 250px;
+    height: 52px;
+    box-sizing: border-box;
+    border: 1px solid rgb(227 224 235);
+    border-radius: 10px;
+    margin: 4px 0 5px 26px;
+    padding-left: 8px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+
+    &::placeholder {
+      color: rgb(207 205 214);
+    }
+  }
+
+  .calendar {
+    display: none;
+  }
+
+  .textArea {
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    width: 802px;
+    height: 83px;
+    box-sizing: border-box;
+    border: 1px solid rgb(227 224 235);
+    border-radius: 10px;
+    margin: 4px 0 3px 26px;
+    padding: 18px 11px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+
+    &::placeholder {
+      color: rgb(207 205 214);
+    }
+  }
+
+  .inputSelect {
+    width: 250px;
+    height: 52px;
+    box-sizing: border-box;
+    border: 1px solid rgb(227 224 235);
+    border-radius: 10px;
+    margin-top: 4px;
+    padding-left: 8px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    background: url('../../../../shared/assets/images/arrow-down.svg') no-repeat 95%;
+    background-size: 15px;
+    appearance: none;
+
+    option {
+      color: #000;
+    }
+
+    &:disabled {
+      background-color: #fff;
+    }
+  }
+
+  .select {
+    position: relative;
+    margin-left: 26px;
+    margin-bottom: 5px;
+
+    .arrow {
+      background: transparent;
+      border: none;
+      position: absolute;
+      top: 21px;
+      right: 15px;
+      transform: rotate(90deg);
+    }
+
+    .types {
+      background-color: white;
+      position: absolute;
+      top: 55px;
+      z-index: 3;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      border: 1px solid rgb(227 224 235);
+      border-radius: 10px;
+      margin-top: -5px;
+      outline: none;
+
+      .typeAnimal {
+        height: 30px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        padding: 4px;
+
+        &:hover {
+          background-color: rgb(207 205 214 / 50%);
+        }
+      }
+    }
+  }
+
+  .invalidInput {
+    border: 1px solid red;
+  }
+
+  .errorMessage {
+    color: #fb0505;
+    margin-left: 26px;
+  }
+}
+
+@media (width <= 1024px) {
+  .inputContainer {
+    .input {
+      width: 200px;
+      height: 43px;
+      margin-left: 15px;
+      margin-right: 20px;
+      font-size: 13px;
+    }
+
+    .inputSelect {
+      width: 200px;
+      height: 43px;
+      font-size: 13px;
+      background-size: 10px;
+    }
+
+    .fieldTitle {
+      margin-top: 7px;
+      margin-left: 15px;
+      font-size: 12px;
+    }
+
+    .select {
+      margin-left: 10px;
+      margin-right: 12px;
+      margin-bottom: 4px;
+
+      .types {
+        top: 45px;
+        width: 200px;
+
+        .typeAnimal {
+          padding-left: 4px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .textArea {
+      margin-left: 15px;
+      width: 665px;
+      font-size: 13px;
+    }
+
+    .errorMessage {
+      margin-left: 15px;
+      color: #fb0505;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (width <= 780px) {
+  .inputContainer {
+    display: flex;
+
+    .input {
+      width: 300px;
+      height: 30px;
+      border-radius: 0;
+      margin-left: 5px;
+      font-size: 10px;
+
+      &[type='date'] {
+        padding-right: 25px;
+      }
+    }
+
+    .inputSelect {
+      width: 300px;
+      height: 30px;
+      margin-left: 5px;
+      border-radius: 0;
+      font-size: 10px;
+      background: 0;
+      appearance: auto;
+    }
+
+    .fieldTitle {
+      position: relative;
+      margin-top: 2px;
+      margin-left: 4px;
+      font-size: 8px;
+      color: rgb(22 118 243);
+    }
+
+    .select {
+      margin-left: 0;
+      margin-bottom: 4px;
+
+      .arrow {
+        top: 2px;
+        right: 20px;
+      }
+
+      .types {
+        top: 35px;
+        border-radius: 0;
+        left: 5px;
+        width: 300px;
+
+        .typeAnimal {
+          height: 20px;
+          font-size: 10px;
+          padding-top: 0;
+          padding-left: 2px;
+        }
+      }
+    }
+
+    .calendar {
+      display: block;
+      border: 0;
+      background: transparent;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 181px;
+      right: 55px;
+    }
+
+    .textArea {
+      margin-left: 4px;
+      border-radius: 0;
+      padding-left: 5px;
+      padding-top: 5px;
+      width: 300px;
+      height: 55px;
+      font-size: 10px;
+    }
+
+    .errorMessage {
+      margin-left: 5px;
+      color: #fb0505;
+      font-size: 8px;
+    }
+  }
+}

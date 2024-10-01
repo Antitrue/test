@@ -7,5 +7,17 @@ import AuthForm from './forms/AuthForm/AuthForm';
 import ProfileForm from './forms/profileForm';
 import PromoCodeForm from './forms/PromoCodeForm/PromoCodeForm';
 import RegForm from './forms/RegForm/RegForm';
+import NewPetForm from './forms/NewPetForm/NewPetForm.tsx';
 
-export { Header, BurgerMenu, ClientNewsSidebar, PetSidebar, Footer, AuthForm, ProfileForm, PromoCodeForm, RegForm };
+export {
+  Header,
+  BurgerMenu,
+  ClientNewsSidebar,
+  PetSidebar,
+  Footer,
+  AuthForm,
+  ProfileForm,
+  PromoCodeForm,
+  RegForm,
+  NewPetForm,
+};
