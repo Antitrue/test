@@ -1,0 +1,242 @@
+.container {
+  margin-top: 127px;
+
+  .calendar {
+    width: 100%;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+    margin: 8px auto;
+  }
+
+  .events {
+    overflow: hidden;
+    max-height: 83px;
+    padding: 0;
+
+    &:hover {
+      overflow-y: auto;
+    }
+
+    li {
+      color: #000;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .not-available {
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        background-color: red;
+        border-radius: 50%;
+      }
+    }
+
+    .available {
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        background-color: #02c202;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 4px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+@media screen and (width <= 1366px) {
+  .container {
+    .events {
+      li {
+        padding-left: 9px;
+        font-size: 12px;
+      }
+
+      .not-available {
+        &::before {
+          width: 5px;
+          height: 5px;
+        }
+      }
+
+      .available {
+        &::before {
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width <= 1140px) {
+  .container {
+    .calendar {
+      font-size: 10px;
+    }
+
+    .events {
+      li {
+        padding-left: 6px;
+        font-size: 8px;
+      }
+
+      .not-available {
+        &::before {
+          width: 4px;
+          height: 4px;
+        }
+      }
+
+      .available {
+        &::before {
+          width: 4px;
+          height: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width <= 1024px) {
+  .container {
+    .events {
+      li {
+        padding-left: 0;
+        font-size: 8px;
+      }
+
+      .not-available {
+        color: #fd0707;
+
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+
+      .available {
+        color: #02c202;
+
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width <= 900px) {
+  .container {
+    .events {
+      li {
+        padding-left: 8px;
+        font-size: 12px;
+      }
+
+      .not-available {
+        color: #000;
+
+        &::before {
+          width: 5px;
+          height: 5px;
+        }
+      }
+
+      .available {
+        color: #000;
+
+        &::before {
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width <= 780px) {
+  .container {
+    .calendar {
+      white-space: wrap;
+    }
+  }
+}
+
+@media screen and (width <= 560px) {
+  .container {
+    .events {
+      li {
+        padding-left: 0;
+        font-size: 10px;
+      }
+
+      .not-available {
+        color: #fd0707;
+
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+
+      .available {
+        color: #02c202;
+
+        &::before {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width <= 480px) {
+  .container {
+    .events {
+      height: 86px;
+
+      li {
+        padding: 0;
+        margin: 0;
+        height: 15px;
+        font-size: 7px;
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+  }
+}
