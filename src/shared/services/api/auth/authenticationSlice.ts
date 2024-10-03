@@ -19,8 +19,9 @@ export const authenticationSlice: Slice<IStateAuth> = createSlice({
   name: 'authenticationSlice',
   initialState,
   reducers: {
-    login: state => {
-      state.isAuth = true;
+    login: (state, action) => {
+      state.isAuth = action.payload.isAuth;
+      state.role = action.payload.role;
     },
     logout: () => initialState,
   },

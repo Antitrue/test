@@ -20,7 +20,7 @@ function UserRole({ hasNotifications, userRole, onLogout }: IUserRoleProps) {
       <Link to={`/profile`} className={styles.modal_window__profile}>
         Profile
       </Link>
-      <button className={styles.modal_window__exit} onClick={() => onLogout()}>
+      <button className={styles.modal_window__exit} onClick={onLogout}>
         Выйти
       </button>
     </Flex>
