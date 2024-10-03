@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function useNavigationClient(location: string, role: string) {
   const navigate = useNavigate();
-  const userRole = localStorage.getItem('role');
+  const userRole = localStorage.getItem('role') || sessionStorage.getItem('role');
 
   useEffect(() => {
     if (userRole !== role || location !== `/${userRole?.toLocaleLowerCase()}`) {
