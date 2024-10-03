@@ -10,7 +10,7 @@ export default function FormFooter({ isLogin, linkTo }: { isLogin: boolean; link
 
   return (
     <div className={styles.formFooter}>
-      <button type='submit' className={styles.formSubmit} disabled={!isValid}>
+      <button type='submit' className={styles.formSubmit} disabled={isLogin ? false : !isValid}>
         {isLogin ? 'Log In' : 'Get Started'}
       </button>
       <p className={styles.formFooterText}>

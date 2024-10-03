@@ -8,7 +8,7 @@ export default function CheckboxField({ isLogin }: { isLogin: boolean }) {
   return (
     <div className={styles.checkboxField}>
       <label className={styles.checkboxFieldLabel}>
-        <input type='checkbox' className={styles.checkboxFieldInput} {...register('isAgree', { required: true })} />
+        <input type='checkbox' className={styles.checkboxFieldInput} {...register('isAgree', { required: !isLogin })} />
         {isLogin ? (
           'Remember me'
         ) : (
