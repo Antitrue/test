@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { loginBody, loginResponse } from './authenticationDTO';
-import { removeFromStorageKeys, setLocalStorageKeys, setSessionStorageKeys } from '../lib/storage';
-import { prepareHeaders } from '../lib/prepareHeadersApi';
-import { baseUrl } from '../lib/consts';
+import { setLocalStorageKeys, setSessionStorageKeys } from '../lib/storage';
+import { prepareHeaders } from '../lib';
+import { baseUrl } from '../lib';
 
 export const authAPI = createApi({
   reducerPath: 'authAPI',
@@ -57,16 +57,9 @@ export const authAPI = createApi({
     }),
     logoutUser: build.mutation<void, void>({
       query: () => ({
-        url: '/auth/logout',
+        url: 'auth/logout',
         method: 'POST',
       }),
-      async onQueryStarted() {
-        try {
-          removeFromStorageKeys(['jwtToken', 'role']);
-        } catch (error) {
-          console.error(error);
-        }
-      },
       invalidatesTags: ['Auth'],
     }),
   }),
