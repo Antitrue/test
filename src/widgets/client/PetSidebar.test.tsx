@@ -1,19 +1,18 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import PetSidebar from './PetSidebar';
-import { defaultCat } from '../../shared/assets/';
-
-const pets = [
-  {
-    name: 'Черничка',
-    icon: <img src={defaultCat} />,
-  },
-];
+import { Provider } from 'react-redux';
+import { store } from '../../shared/services/store/store';
 
 describe('PetSidebar component', () => {
   it('PetSidebar renders', () => {
-    render(<PetSidebar pets={pets} />);
+    const { baseElement } = render(
+      <Provider store={store}>
+        <PetSidebar />
+      </Provider>
+    );
 
-    expect(screen.getByText('Черничка')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
   });
 });
