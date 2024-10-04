@@ -7,6 +7,7 @@ import AuthForm from './forms/AuthForm/AuthForm';
 import ProfileForm from './forms/profileForm';
 import PromoCodeForm from './forms/PromoCodeForm/PromoCodeForm';
 import RegForm from './forms/RegForm/RegForm';
+import Anchor from './Anchor/Anchor';
 import NewPetForm from './forms/NewPetForm/NewPetForm.tsx';
 
 export {
@@ -19,5 +20,6 @@ export {
   ProfileForm,
   PromoCodeForm,
   RegForm,
+  Anchor,
   NewPetForm,
 };

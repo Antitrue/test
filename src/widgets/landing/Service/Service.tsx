@@ -17,7 +17,7 @@ const Service = () => {
   };
 
   return (
-    <div className={classes.service}>
+    <div className={classes.service} id='services'>
       <h2>
         Услуги <br />
         нашей клиники

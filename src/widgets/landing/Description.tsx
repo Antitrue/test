@@ -7,7 +7,7 @@ function Description() {
   return (
     <Flex className={Class.container}>
       <Flex vertical className={Class.description}>
-        <div>
+        <div id='description'>
           <div className={Class.description__header}>Ветеринарная клиника Слон в Краснодаре</div>
           <div className={Class.description__body}>
             Первый филиал сети ветеринарных центров СЛОН открыл свои двери для владельцев и их питомцев в 2008 году в
