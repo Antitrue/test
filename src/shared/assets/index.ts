@@ -64,6 +64,7 @@ import addNewImage from './images/add-new-image.svg';
 import avatarTemplate from './images/avatar-template.png';
 import goBackIcon from './images/go-back-left.svg';
 import profileSettiings from './images/profile-settings.svg';
+import doubleArrow from './images/double-arrow-top.svg';
 
 export {
   catService,
@@ -132,4 +133,5 @@ export {
   avatarTemplate,
   goBackIcon,
   profileSettiings,
+  doubleArrow,
 };

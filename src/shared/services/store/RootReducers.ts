@@ -11,6 +11,7 @@ import { dewormingAPI } from '../api/client/deworming.api';
 import { clientAPI } from '../api/client/client.api';
 import { petClientAPI } from '../api/client/petClient.api';
 import { vaccinationApi } from '../api/client/vaccination.api';
+import { clientAppointmentAPI } from '../api/client/clientAppointment.api.ts';
 
 const rootReducers = combineReducers({
   authenticationSlice: authenticationSlice.reducer,
@@ -26,6 +27,7 @@ const rootReducers = combineReducers({
   [clientAPI.reducerPath]: clientAPI.reducer,
   [petClientAPI.reducerPath]: petClientAPI.reducer,
   [vaccinationApi.reducerPath]: vaccinationApi.reducer,
+  [clientAppointmentAPI.reducerPath]: clientAppointmentAPI.reducer,
 });
 
 export default rootReducers;

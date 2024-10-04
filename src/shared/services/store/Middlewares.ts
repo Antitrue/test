@@ -10,6 +10,7 @@ import { dewormingAPI } from '../api/client/deworming.api';
 import { clientAPI } from '../api/client/client.api';
 import { petClientAPI } from '../api/client/petClient.api.ts';
 import { vaccinationApi } from '../api/client/vaccination.api.ts';
+import { clientAppointmentAPI } from '../api/client/clientAppointment.api.ts';
 
 export const middlewares = [
   authAPI.middleware,
@@ -24,4 +25,5 @@ export const middlewares = [
   clientAPI.middleware,
   petClientAPI.middleware,
   vaccinationApi.middleware,
+  clientAppointmentAPI.middleware,
 ];
