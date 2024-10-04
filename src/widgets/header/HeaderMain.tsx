@@ -4,22 +4,36 @@ import UserRole from './UserRole';
 import { Button } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './styles.module.scss';
 import { useLogoutUserMutation } from '../../shared/services/api/auth/authentication.api';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { IStateAuth } from '../../shared/services/api/auth/authenticationSlice';
+import { authenticationSlice } from '../../shared/services/';
+import { removeFromStorageKeys } from '../../shared/services/api/lib/storage.ts';
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   const { role, isAuth } = useSelector((state: { authenticationSlice: IStateAuth }) => state.authenticationSlice);
   const [burgerMenu, useBurgerMenu] = useState(false);
   const [OutLoginUser] = useLogoutUserMutation();
+
+  const { login } = authenticationSlice.actions;
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('jwtToken') || sessionStorage.getItem('jwtToken');
+  const userRole = localStorage.getItem('role') || sessionStorage.getItem('role');
+
+  useEffect(() => {
+    if (token) {
+      dispatch(login({ isAuth: true, role: userRole }));
+    }
+  }, [token]);
 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     await OutLoginUser().unwrap();
+    removeFromStorageKeys(['jwtToken', 'role']);
     navigate('/');
   };
 
