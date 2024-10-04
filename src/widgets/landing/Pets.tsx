@@ -7,7 +7,9 @@ import { ReactNode } from 'react';
 function Pets() {
   return (
     <Flex vertical className={styles.container}>
-      <div className={styles.header}>Работаем со всеми видами животных</div>
+      <div className={styles.header} id='pets'>
+        Работаем со всеми видами животных
+      </div>
       <Flex className={styles.pets}>
         {pets.map<ReactNode>((pet: string, id: number): ReactNode => {
           return (

@@ -1,7 +1,6 @@
 import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
-
-import { Header, Footer } from '../widgets';
+import { Header, Footer, Anchor } from '../widgets';
 
 const { Content: LayoutContent, Footer: LayoutFooter } = Layout;
 
@@ -16,6 +15,7 @@ function App() {
         margin: '0 auto',
         background: 'none',
       }}>
+      <Anchor />
       <Header />
       <LayoutContent style={{ display: 'flex', flexDirection: 'column' }}>
         <Outlet />

@@ -8,13 +8,11 @@ interface link {
 
 function Navigation() {
   const links: link[] = [
-    { label: 'Список докторов', path: '#' },
-    { label: 'Список процедур', path: '#' },
-    { label: 'Список того', path: '#' },
-    { label: 'О чем-нибудь', path: '#' },
-    { label: 'Список сосисок', path: '#' },
-    { label: 'Контакты', path: '#' },
-    { label: 'О нас', path: '#' },
+    { label: 'Главная', path: '/' },
+    { label: 'Питомцы', path: '/#pets' },
+    { label: 'О нас', path: '/#description' },
+    { label: 'Услуги', path: '/#services' },
+    { label: 'Записаться на прием', path: '/#appointment' },
     { label: 'Форум', path: '#' },
   ];
 

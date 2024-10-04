@@ -25,7 +25,7 @@ const FormOnlineAppointment: React.FC = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id='appointment'>
       <div className={styles.formSection}>
         <article className={styles.article}>
           <h1 className={styles.title}>Остались вопросы?</h1>
