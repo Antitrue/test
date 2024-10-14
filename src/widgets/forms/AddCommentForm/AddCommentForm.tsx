@@ -1,6 +1,5 @@
 import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
-import { useForm } from 'antd/es/form/Form';
 
 import styles from './AddCommentForm.module.scss';
 
@@ -13,7 +12,7 @@ interface AddCommentFormProps {
 }
 
 const AddCommentForm = ({ handleAddComment }: AddCommentFormProps) => {
-  const [form] = useForm();
+  const [form] = Form.useForm();
   const onFinish: FormProps<FieldType>['onFinish'] = values => {
     if (values.comment?.trim()) {
       handleAddComment(values.comment.trim());
