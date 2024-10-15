@@ -1,0 +1,30 @@
+.wrapper {
+  width: 80%;
+  box-shadow: 0 10px 20px 0 #12263f0d;
+  margin-left: auto;
+  margin-right: auto;
+
+  .header {
+    background-color: #5496d433;
+    border-radius: 3px 3px 0 0;
+    padding: 20px;
+
+    .title {
+      font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+      line-height: clamp(1rem, 0.978rem + 0.0939vw, 1.0625rem);
+      color: #3a4045;
+      margin: 0;
+    }
+  }
+
+  .body {
+    background-color: #fff;
+    height: 100%;
+    border-radius: 0 0 3px 3px;
+    padding: 20px;
+  }
+
+  @media screen and (width <= 780px) {
+    width: 100%;
+  }
+}
