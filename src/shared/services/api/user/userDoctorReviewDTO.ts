@@ -1,7 +1,7 @@
 import { IComment } from './userCommentDTO';
 
-export type DoctorReview = {
+export interface IDoctorReview {
   id: number;
   doctorId: number;
   review: IComment;
-};
+}
