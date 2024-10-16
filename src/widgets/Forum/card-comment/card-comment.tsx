@@ -1,5 +1,6 @@
-import { Avatar, Button } from 'antd';
-import { UserOutlined, LikeOutlined, DislikeOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import Likes from '../../../shared/Likes';
 
 import styles from './card-comment.module.scss';
 
@@ -22,16 +23,7 @@ const CardComment: React.FC = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus animi veritatis molestias pariatur officiis.
           Cum illum unde suscipit enim tenetur quos laboriosam sint necessitatibus?
         </div>
-        <div className={styles.like}>
-          <Button type='text'>
-            <LikeOutlined className={styles.btnLike} />
-            <span>12</span>
-          </Button>
-          <Button type='text'>
-            <DislikeOutlined className={styles.btnLike} />
-            <span>3</span>
-          </Button>
-        </div>
+        <Likes />
       </div>
     </div>
   );
