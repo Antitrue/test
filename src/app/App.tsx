@@ -20,7 +20,6 @@ function App() {
       <LayoutContent style={{ display: 'flex', flexDirection: 'column' }}>
         <Outlet />
       </LayoutContent>
-      
       <LayoutFooter style={{ background: 'none', padding: 0 }}>
         <Footer />
       </LayoutFooter>
