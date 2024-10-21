@@ -1,6 +1,7 @@
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import Likes from '../../../shared/Likes';
+import { Link } from 'react-router-dom';
+import Likes from '../../Likes';
 
 import styles from './card-comment.module.scss';
 
@@ -12,7 +13,7 @@ const CardComment: React.FC = () => {
           <Avatar size={154} src={null} icon={<UserOutlined />} />
         </div>
         <div className={styles.nickname}>
-          <a href='#'>Jack Cat</a>
+          <Link to='#'>Jack Cat</Link>
         </div>
         <div className={styles['triangle-left']}></div>
       </div>
@@ -23,7 +24,10 @@ const CardComment: React.FC = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus animi veritatis molestias pariatur officiis.
           Cum illum unde suscipit enim tenetur quos laboriosam sint necessitatibus?
         </div>
-        <Likes />
+        <div className={styles.like}>
+          <Likes isLike={true} count={1} />
+          <Likes isLike={false} count={200} />
+        </div>
       </div>
     </div>
   );

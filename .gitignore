@@ -30,3 +30,4 @@ package-lock.json
 
 # storybook dev files
 *.stories.tsx
+.storybook/
