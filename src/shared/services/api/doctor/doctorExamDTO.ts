@@ -1,24 +1,24 @@
-export interface IException {
+export type Exception = {
   message: string;
-}
+};
 
-export type INewExam = {
+export type NewExam = {
   petId: number;
-  body: IBody;
+  body: Body;
 };
 
-export type IUpdateExam = {
+export type UpdateExam = {
   examId: number;
-  body: IBody;
+  body: Body;
 };
 
-type IBody = {
+type Body = {
   weight: number;
   isCanMove: boolean;
   text: string;
 };
 
-export interface IGetExam extends IBody {
+export interface IGetExam extends Body {
   id: number;
   petId: number;
 }

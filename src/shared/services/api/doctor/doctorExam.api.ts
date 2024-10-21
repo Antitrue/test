@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { baseUrl, prepareHeaders } from '../lib';
-import { IException, IGetExam, INewExam, IUpdateExam } from './doctorExamDTO';
+import { Exception, IGetExam, NewExam, UpdateExam } from './doctorExamDTO';
 
 export const doctorExamApi = createApi({
   reducerPath: 'doctorExamApi',
   tagTypes: ['Exam'],
   baseQuery: fetchBaseQuery({ baseUrl: `${baseUrl}doctor/exam`, prepareHeaders }),
   endpoints: build => ({
-    deleteExam: build.mutation<IException, number>({
+    deleteExam: build.mutation<Exception, number>({
       query: examId => ({
         url: `/${examId}`,
         method: 'DELETE',
@@ -27,7 +27,7 @@ export const doctorExamApi = createApi({
       }),
       providesTags: ['Exam'],
     }),
-    addNewExam: build.mutation<IGetExam, INewExam>({
+    addNewExam: build.mutation<IGetExam, NewExam>({
       query: ({ petId, body }) => ({
         url: '',
         method: 'POST',
@@ -38,7 +38,7 @@ export const doctorExamApi = createApi({
       }),
       invalidatesTags: ['Exam'],
     }),
-    updateExam: build.mutation<IException, IUpdateExam>({
+    updateExam: build.mutation<Exception, UpdateExam>({
       query: ({ examId, body }) => ({
         url: `/${examId}`,
         method: 'PUT',
