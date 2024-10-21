@@ -1,4 +1,4 @@
-export interface IUserProfile {
+export type UserProfile = {
   avatarUrl: string;
   firstName: string;
   lastName: string;
@@ -7,4 +7,4 @@ export interface IUserProfile {
   telegramId: string;
   discordNotify: boolean;
   emailNotify: boolean;
-}
+};
