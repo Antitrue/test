@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
 import { baseUrl, prepareHeaders } from '../lib';
-
 import { IException, IGetExam, INewExam, IUpdateExam } from './doctorExamDTO';
 
 export const doctorExamApi = createApi({
