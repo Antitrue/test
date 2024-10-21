@@ -106,3 +106,62 @@
     font-size: 0.8rem;
     color: #2c3e50;
 }
+
+@media (max-width: 768px) {
+    .postItem {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 0.9rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .avatar {
+        width: 28px;
+        height: 28px;
+    }
+
+    .date span,
+    .comments span {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .postItem {
+        padding: 8px;
+    }
+
+    .title {
+        font-size: 0.8rem;
+    }
+
+    .description {
+        font-size: 0.75rem;
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .avatar {
+        width: 24px;
+        height: 24px;
+    }
+
+    .date span,
+    .comments span {
+        font-size: 0.7rem;
+    }
+}
