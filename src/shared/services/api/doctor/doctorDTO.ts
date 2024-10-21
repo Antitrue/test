@@ -1,11 +1,11 @@
-export interface IDoctorDiagnosis {
+export type DoctorDiagnosis = {
   id: number;
   petId: number;
   doctorId: number;
   description: string;
-}
+};
 
-export interface IAddDiagnosis {
+export type AddDiagnosis = {
   petId: number;
   body: string;
-}
+};
