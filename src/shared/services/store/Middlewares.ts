@@ -12,6 +12,7 @@ import { petClientAPI } from '../api/client/petClient.api.ts';
 import { vaccinationApi } from '../api/client/vaccination.api.ts';
 import { clientAppointmentAPI } from '../api/client/clientAppointment.api.ts';
 import { doctorExamApi } from '../api/doctor/doctorExam.api.ts';
+import { doctorApi } from '../api/doctor/doctor.api.ts';
 
 export const middlewares = [
   authAPI.middleware,
@@ -28,4 +29,5 @@ export const middlewares = [
   vaccinationApi.middleware,
   clientAppointmentAPI.middleware,
   doctorExamApi.middleware,
+  doctorApi.middleware,
 ];
