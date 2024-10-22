@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
+import Forum from '../../widgets/Forum/Forum';
 
 import { SignIn, SignUp, Landing, Client, Profile, Admin, Manager, Doctor } from '../../pages';
 
@@ -27,7 +28,7 @@ export const MainRoutes = createBrowserRouter([
       },
       {
         path: 'forum',
-        element: <div>Страничка Forum</div>,
+        element: <Forum />,
       },
       {
         path: 'client',
