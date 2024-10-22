@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './PostItem.module.scss';
 
-
-
 type PostItemProps = {
   title: string;
   description: string;
