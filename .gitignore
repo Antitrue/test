@@ -24,3 +24,10 @@ dist-ssr
 *.sw?
 node_modules
 node_modules
+package-lock.json
+*storybook.log
+package-lock.json
+
+# storybook dev files
+*.stories.tsx
+.storybook/
