@@ -12,6 +12,7 @@ import { clientAPI } from '../api/client/client.api';
 import { petClientAPI } from '../api/client/petClient.api';
 import { vaccinationApi } from '../api/client/vaccination.api';
 import { clientAppointmentAPI } from '../api/client/clientAppointment.api.ts';
+import { userProfileAPI } from '../api/user/userProfile.api.ts';
 import { doctorExamApi } from '../api/doctor/doctorExam.api.ts';
 import { doctorApi } from '../api/doctor/doctor.api.ts';
 
@@ -30,6 +31,7 @@ const rootReducers = combineReducers({
   [petClientAPI.reducerPath]: petClientAPI.reducer,
   [vaccinationApi.reducerPath]: vaccinationApi.reducer,
   [clientAppointmentAPI.reducerPath]: clientAppointmentAPI.reducer,
+  [userProfileAPI.reducerPath]: userProfileAPI.reducer,
   [doctorExamApi.reducerPath]: doctorExamApi.reducer,
   [doctorApi.reducerPath]: doctorApi.reducer,
 });
