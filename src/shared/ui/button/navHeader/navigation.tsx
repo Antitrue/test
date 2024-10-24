@@ -13,7 +13,7 @@ function Navigation() {
     { label: 'О нас', path: '/#description' },
     { label: 'Услуги', path: '/#services' },
     { label: 'Записаться на прием', path: '/#appointment' },
-    { label: 'Форум', path: '#' },
+    { label: 'Форум', path: '/forum' },
   ];
 
   return (
