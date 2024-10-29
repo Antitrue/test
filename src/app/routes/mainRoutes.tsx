@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-import { SignIn, SignUp, Landing, Client, Profile, Admin, Manager, Doctor, Forum } from '../../pages';
+import { SignIn, SignUp, Landing, Client, Profile, Admin, Manager, Doctor, Forum } from '../../pages/asyncPages/';
 
 export const MainRoutes = createBrowserRouter([
   {
