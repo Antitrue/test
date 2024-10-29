@@ -1,4 +1,4 @@
-import { ClientNewsSidebar, PetSidebar } from '../widgets';
+import { ClientNewsSidebar, PetSidebar, InfoPet } from '../widgets';
 import { defaultCat } from '../shared/assets';
 
 import styles from './Client.module.scss';
@@ -44,6 +44,7 @@ function Client() {
           {showCalendar ? 'Скрыть' : 'Показать'} календарь
         </button>
         <ClientCalendar showCalendar={showCalendar} />
+        <InfoPet />
       </div>
       <ClientNewsSidebar />
     </div>

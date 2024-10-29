@@ -9,6 +9,7 @@ import PromoCodeForm from './forms/PromoCodeForm/PromoCodeForm';
 import RegForm from './forms/RegForm/RegForm';
 import Anchor from './Anchor/Anchor';
 import NewPetForm from './forms/NewPetForm/NewPetForm.tsx';
+import InfoPet from './client/InfoPet.tsx';
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   RegForm,
   Anchor,
   NewPetForm,
+  InfoPet,
 };
