@@ -2,11 +2,10 @@ import { useForm } from 'react-hook-form';
 import Button from '../../../shared/ui/button/Button.tsx';
 import PetInputFiled from '../ui/PetInputFiled/PetInputFiled.tsx';
 import { close } from '../../../shared/assets/';
-// import { DatePicker } from 'antd';
 import { Checkbox } from 'antd';
+import { Gender, PetType, Size } from '../NewPetForm/types.ts';
 
 import styles from './AddNewsForm.module.scss';
-import { useStyleRegister } from 'antd/es/theme/internal';
 
 const AddNewsForm: React.FC = () => {
   const {
@@ -63,7 +62,7 @@ const AddNewsForm: React.FC = () => {
               register={register}
               errors={errors}
             />
-            
+
             <Checkbox className={styles.warnCheckbox}>Важная новость</Checkbox>
             <PetInputFiled
               name='description'
