@@ -6,7 +6,7 @@ export const vaccinationApi = createApi({
   reducerPath: 'vaccinationApi',
   tagTypes: ['vaccination'],
   baseQuery: fetchBaseQuery({
-    baseUrl: `${baseUrl}/client/procedure`,
+    baseUrl: `${baseUrl}client/procedure`,
     prepareHeaders,
   }),
   endpoints: build => ({

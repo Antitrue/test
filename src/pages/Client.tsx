@@ -23,7 +23,7 @@ function Client() {
 
   return (
     <div className={styles.container}>
-      <PetSidebar pets={pets} getPetId={getPetId} />
+      <PetSidebar getPetId={getPetId} />
       <div className={styles.main}>
         <button className={`${styles.close} ${!showCalendar && styles.open}`} type='button' onClick={toggleCalendar}>
           {showCalendar ? 'Скрыть' : 'Показать'} календарь
