@@ -1,6 +1,7 @@
-import { Layout } from 'antd';
+import { Layout, Spin } from 'antd';
 import { Outlet } from 'react-router-dom';
 import { Header, Footer, Anchor } from '../widgets';
+import { Suspense } from 'react';
 
 const { Content: LayoutContent, Footer: LayoutFooter } = Layout;
 
@@ -18,7 +19,9 @@ function App() {
       <Anchor />
       <Header />
       <LayoutContent style={{ display: 'flex', flexDirection: 'column' }}>
-        <Outlet />
+        <Suspense fallback={<Spin />}>
+          <Outlet />
+        </Suspense>
       </LayoutContent>
       <LayoutFooter style={{ background: 'none', padding: 0 }}>
         <Footer />
