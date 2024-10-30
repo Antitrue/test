@@ -31,20 +31,25 @@ function Client() {
   useNavigationClient(location.pathname, 'CLIENT');
 
   const [showCalendar, setShowCalendar] = useState(false);
+  const [petId, setPetId] = useState(0);
 
   const toggleCalendar = () => {
     setShowCalendar(prev => !prev);
   };
 
+  const getPetId: (id: number) => void = id => {
+    setPetId(id);
+  };
+
   return (
     <div className={styles.container}>
-      <PetSidebar pets={pets} />
+      <PetSidebar pets={pets} getPetId={getPetId} />
       <div className={styles.main}>
         <button className={`${styles.close} ${!showCalendar && styles.open}`} type='button' onClick={toggleCalendar}>
           {showCalendar ? 'Скрыть' : 'Показать'} календарь
         </button>
         <ClientCalendar showCalendar={showCalendar} />
-        <InfoPet />
+        <InfoPet petId={petId} />
       </div>
       <ClientNewsSidebar />
     </div>

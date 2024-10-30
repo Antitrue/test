@@ -5,61 +5,46 @@ import { DownOutlined } from '@ant-design/icons';
 import styles from './InfoPet.module.scss';
 import { useGetDewormingByPetQuery } from '../../shared/services/api/client/deworming.api';
 import { useGetAllVaccinationsQuery } from '../../shared/services/api/client/vaccination.api';
+import { useGetPetContactQuery } from '../../shared/services/api/client/petContact.api';
+import { useGetExternalProcedureQuery } from '../../shared/services/api/client/external.api';
+import { useGetAllReproductionQuery } from '../../shared/services/api/client/reproduction.api';
 
-// const text = `
-//   A dog is a type of domesticated animal.
-//   Known for its loyalty and faithfulness,
-//   it can be found as a welcome guest in many households across the world.
-// `;
+type Props = {
+  petId: number;
+};
 
-// const items: CollapseProps['items'] = [
-//   {
-//     key: '1',
-//     label: 'This is panel header 1',
-//     children: <p>{text}</p>,
-//   },
-//   {
-//     key: '2',
-//     label: 'This is panel header 2',
-//     children: <p>{text}</p>,
-//   },
-//   {
-//     key: '3',
-//     label: 'This is panel header 3',
-//     children: <p>{text}</p>,
-//   },
-//   {
-//     key: '4',
-//     label: 'This is panel header 4',
-//     children: <p>{text}</p>,
-//   },
-//   {
-//     key: '5',
-//     label: 'This is panel header 5',
-//     children: <p>{text}</p>,
-//   },
-//   {
-//     key: '6',
-//     label: 'This is panel header 6',
-//     children: <p>{text}</p>,
-//   },
-// ];
+const InfoPet: React.FC<Props> = ({ petId }) => {
+  const { data: dewormingInfo } = useGetDewormingByPetQuery(petId);
+  const { data: vaccinationInfo } = useGetAllVaccinationsQuery(petId);
+  const { data: contactInfo } = useGetPetContactQuery(petId);
+  const { data: externalInfo } = useGetExternalProcedureQuery(petId);
+  const { data: reproductionInfo } = useGetAllReproductionQuery(petId);
 
-const InfoPet: React.FC = () => {
-  const id = 1;
-  const { data: data1 } = useGetDewormingByPetQuery(id);
-  const { data } = useGetAllVaccinationsQuery(id);
-  console.log(data);
   const items: CollapseProps['items'] = [
     {
       key: '1',
       label: 'deworming',
-      children: <p>{data1 ? JSON.stringify(data1) : null} </p>,
+      children: <p>{dewormingInfo ? JSON.stringify(dewormingInfo) : null} </p>,
     },
     {
       key: '2',
       label: 'vaccination',
-      children: <p>{data ? JSON.stringify(data) : null} </p>,
+      children: <p>{vaccinationInfo ? JSON.stringify(vaccinationInfo) : null} </p>,
+    },
+    {
+      key: '3',
+      label: 'contact',
+      children: <p>{contactInfo ? JSON.stringify(contactInfo) : null} </p>,
+    },
+    {
+      key: '4',
+      label: 'extarnal',
+      children: <p>{externalInfo ? JSON.stringify(externalInfo) : null} </p>,
+    },
+    {
+      key: '5',
+      label: 'reproduction',
+      children: <p>{reproductionInfo ? JSON.stringify(reproductionInfo) : null} </p>,
     },
   ];
 

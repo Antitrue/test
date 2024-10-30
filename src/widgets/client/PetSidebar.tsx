@@ -8,8 +8,11 @@ import styles from './PetSidebar.module.scss';
 import { useMemo } from 'react';
 
 type MenuItem = Required<MenuProps>['items'][number];
+type Props = {
+  getPetId: (id: number) => void;
+};
 
-const PetSidebar: React.FC = () => {
+const PetSidebar: React.FC<Props> = ({ getPetId }) => {
   const { data = [], isError, isLoading } = useGetAllPetsQuery();
 
   const items: MenuItem[] = useMemo(() => {
@@ -41,6 +44,7 @@ const PetSidebar: React.FC = () => {
         label: pet.name,
         icon: <img src={iconUrl} alt={pet.name} />,
         children: [{ key: `${index}${index}`, label: buttons }],
+        onTitleClick: () => getPetId(pet.id),
       };
     });
   }, [data]);
