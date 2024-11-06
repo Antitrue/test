@@ -1,7 +1,5 @@
-import { ProfileForm } from '../widgets';
-
 const Profile = () => {
-  return <ProfileForm />;
+  return <>ProfileForm</>;
 };
 
 export default Profile;

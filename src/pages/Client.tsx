@@ -1,7 +1,6 @@
-import { ClientNewsSidebar, PetSidebar, InfoPet } from '../widgets';
+import { ClientNewsSidebar, PetSidebar } from '../widgets';
 import { useLocation } from 'react-router-dom';
 import useNavigationClient from '../shared/hooks/useNavigationClient';
-import ClientCalendar from './ClientCalendar/ClientCalendar.tsx';
 import { useState } from 'react';
 
 import styles from './Client.module.scss';
@@ -21,6 +20,8 @@ function Client() {
     setPetId(id);
   };
 
+  console.log(petId);
+
   return (
     <div className={styles.container}>
       <PetSidebar getPetId={getPetId} />
@@ -28,8 +29,6 @@ function Client() {
         <button className={`${styles.close} ${!showCalendar && styles.open}`} type='button' onClick={toggleCalendar}>
           {showCalendar ? 'Скрыть' : 'Показать'} календарь
         </button>
-        <ClientCalendar showCalendar={showCalendar} />
-        <InfoPet petId={petId} />
       </div>
       <ClientNewsSidebar />
     </div>
