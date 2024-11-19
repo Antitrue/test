@@ -12,6 +12,7 @@ import { vaccinationApi } from '../api/client/vaccination.api.ts';
 import { clientAppointmentAPI } from '../api/client/clientAppointment.api.ts';
 import { userDoctorReviewAPI } from '../api/user/userDoctorReview.api.ts';
 import { userProfileAPI } from '../api/user/userProfile.api.ts';
+import { managerAppearenceControllerApi } from '../api/manager/managerAppearanceController.api.ts';
 
 export const middlewares = [
   authAPI.middleware,
@@ -28,4 +29,5 @@ export const middlewares = [
   clientAppointmentAPI.middleware,
   userDoctorReviewAPI.middleware,
   userProfileAPI.middleware,
+  managerAppearenceControllerApi.middleware,
 ];
