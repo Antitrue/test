@@ -9,13 +9,13 @@ export const managerAppearenceControllerApi = createApi({
   tagTypes: ['breeds', 'color'],
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl, prepareHeaders }),
   endpoints: build => ({
-    getColor: build.query<string[], string | string[] | null>({
+    getColor: build.query<string[], string | null>({
       query: color => ({
         url: apiColorPath + `${color ? `?color=${color}` : ''}`,
       }),
       providesTags: ['color'],
     }),
-    getBreed: build.query<string[], string | string[] | null>({
+    getBreed: build.query<string[], string | null>({
       query: breeds => ({
         url: apiBreedPath + `${breeds ? `?breed=${breeds}` : ''}`,
       }),
