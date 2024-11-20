@@ -13,6 +13,7 @@ import { vaccinationApi } from '../api/client/vaccination.api';
 import { clientAppointmentAPI } from '../api/client/clientAppointment.api.ts';
 import { userDoctorReviewAPI } from '../api/user/userDoctorReview.api.ts';
 import { userProfileAPI } from '../api/user/userProfile.api.ts';
+import { managerAppearenceControllerApi } from '../api/manager/managerAppearanceController.api.ts';
 
 const rootReducers = combineReducers({
   authenticationSlice: authenticationSlice.reducer,
@@ -30,6 +31,7 @@ const rootReducers = combineReducers({
   [clientAppointmentAPI.reducerPath]: clientAppointmentAPI.reducer,
   [userDoctorReviewAPI.reducerPath]: userDoctorReviewAPI.reducer,
   [userProfileAPI.reducerPath]: userProfileAPI.reducer,
+  [managerAppearenceControllerApi.reducerPath]: managerAppearenceControllerApi.reducer,
 });
 
 export default rootReducers;
