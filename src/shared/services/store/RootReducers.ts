@@ -14,6 +14,7 @@ import { clientAppointmentAPI } from '../api/client/clientAppointment.api.ts';
 import { userDoctorReviewAPI } from '../api/user/userDoctorReview.api.ts';
 import { userProfileAPI } from '../api/user/userProfile.api.ts';
 import { managerAppearenceControllerApi } from '../api/manager/managerAppearanceController.api.ts';
+import { managerNewsApi } from '../api/manager/managerNews.api.ts';
 
 const rootReducers = combineReducers({
   authenticationSlice: authenticationSlice.reducer,
@@ -32,6 +33,7 @@ const rootReducers = combineReducers({
   [userDoctorReviewAPI.reducerPath]: userDoctorReviewAPI.reducer,
   [userProfileAPI.reducerPath]: userProfileAPI.reducer,
   [managerAppearenceControllerApi.reducerPath]: managerAppearenceControllerApi.reducer,
+  [managerNewsApi.reducerPath]: managerNewsApi.reducer,
 });
 
 export default rootReducers;
