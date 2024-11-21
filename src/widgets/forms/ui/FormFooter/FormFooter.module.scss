@@ -1,0 +1,31 @@
+.formFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.formSubmit {
+  background-color: #1676f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: clamp(1rem, 1rem + 0vw, 1rem);
+  padding: 11px 14px;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.formFooterText {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+
+  & > span {
+    color: #1676f3;
+    font-weight: 600;
+  }
+}

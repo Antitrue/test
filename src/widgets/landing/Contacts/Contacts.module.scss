@@ -1,0 +1,76 @@
+.container {
+  display: grid;
+  grid-template: auto / 1fr;
+  font-size: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+  font-weight: 600;
+  color: #656a6e;
+
+  & ul {
+    list-style: none;
+  }
+}
+
+.companyInfo {
+  display: grid;
+  grid-template: auto / repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 10px;
+
+  & h2 {
+    font-size: clamp(0.9375rem, 0.9375rem + 0vw, 0.9375rem);
+    margin-bottom: 15px;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    cursor: pointer;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  gap: 25px;
+
+  & li > img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+}
+
+.companyDetails {
+  display: grid;
+  grid-template: auto 1fr;
+  gap: 10px;
+  align-content: flex-start;
+  justify-items: center;
+  padding: 10px;
+
+  & .logo > img {
+    max-width: 215px;
+    height: auto;
+  }
+}
+
+.privatePolicy {
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+@media (width >= 768px) {
+  .container {
+    grid-template: auto / 2fr 1fr;
+  }
+
+  .companyInfo,
+  .companyDetails {
+    padding: 15px;
+  }
+}
+
+@media (width >= 1440px) {
+  .companyInfo {
+    justify-items: center;
+  }
+}

@@ -1,0 +1,156 @@
+.radioContainer {
+  display: flex;
+  flex-flow: column wrap;
+  width: 250px;
+  margin-left: 26px;
+
+  .fieldTitle {
+    margin-top: 18px;
+  }
+
+  .genderContainer {
+    display: flex;
+    flex-direction: column;
+
+    .genderLabel {
+      margin-top: 4px;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .sizeContainer {
+    display: flex;
+    flex-flow: row wrap;
+
+    .sizeLabel {
+      display: flex;
+      flex-direction: row;
+      padding-right: 10px;
+      margin-top: 4px;
+    }
+  }
+
+  .radio {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .invalidRadio {
+    border: 1px red solid;
+  }
+
+  .checkStyle {
+    border-radius: 50%;
+    width: 22px;
+    height: 21px;
+    background: rgb(217 217 217);
+    margin-right: 8px;
+  }
+
+  .radio:checked + .checkStyle {
+    content: '';
+    width: 23px;
+    height: 21px;
+    border-radius: 50%;
+    background: rgb(22 118 243);
+  }
+}
+
+@media (width <= 1024px) {
+  .radioContainer {
+    width: 177px;
+    margin-left: 15px;
+
+    .fieldTitle {
+      margin-top: 7px;
+      font-size: 13px;
+    }
+
+    .genderContainer {
+      margin-top: 4px;
+
+      .genderLabel {
+        font-size: 12px;
+      }
+    }
+
+    .sizeContainer {
+      margin-top: 4px;
+
+      .sizeLabel {
+        padding-right: 7px;
+        font-size: 12px;
+      }
+    }
+
+    .checkStyle {
+      width: 17px;
+      height: 17px;
+      margin-right: 5px;
+    }
+
+    .radio:checked + .checkStyle {
+      width: 17px;
+      height: 17px;
+    }
+  }
+}
+
+@media (width <= 780px) {
+  .radioContainer {
+    margin-left: 2px;
+    margin-bottom: 4px;
+
+    .fieldTitle {
+      margin-top: 2px;
+      margin-left: 4px;
+      font-size: 8px;
+      color: rgb(22 118 243);
+    }
+
+    .genderContainer {
+      margin-top: 4px;
+      margin-left: 4px;
+      display: flex;
+      flex-direction: column;
+
+      .genderLabel {
+        display: flex;
+        flex-direction: row;
+        font-size: 10px;
+        margin-top: 2px;
+      }
+    }
+
+    .sizeContainer {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100px;
+      margin-left: 4px;
+      margin-top: 4px;
+
+      .sizeLabel {
+        display: flex;
+        flex-direction: row;
+        padding-right: 7px;
+        font-size: 10px;
+        margin-top: 2px;
+      }
+    }
+
+    .checkStyle {
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+    }
+
+    .radio:checked + .checkStyle {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

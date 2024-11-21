@@ -1,0 +1,23 @@
+.checkboxField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: clamp(0.8125rem, 0.8125rem + 0vw, 0.8125rem);
+}
+
+.checkboxFieldLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkboxFieldInput {
+  width: 16px;
+  height: 15px;
+}
+
+.forgotPasswordLink {
+  color: #333;
+  font-weight: 600;
+}
