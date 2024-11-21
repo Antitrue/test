@@ -1,0 +1,29 @@
+@import url('./fonts.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+}

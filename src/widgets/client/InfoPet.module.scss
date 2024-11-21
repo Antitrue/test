@@ -1,0 +1,22 @@
+.wrapper {
+  margin-top: 37px;
+
+  .title {
+    font-size: clamp(0.875rem, 0.6667rem + 0.9259vw, 1.5rem);
+    font-weight: 400;
+    color: #000;
+  }
+
+  .collapse {
+    margin-top: 14px;
+    margin-bottom: 25px;
+
+    div:last-child {
+      border-radius: 0;
+
+      div:last-child {
+        border-radius: 0;
+      }
+    }
+  }
+}

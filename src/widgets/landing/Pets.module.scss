@@ -1,0 +1,120 @@
+@use 'sass:list';
+
+@font-face {
+  font-family: OpenSansRegular;
+  src: url('../../shared/assets/fonts/OpenSans-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: OpenSansSemiBold;
+  src: url('../../shared/assets/fonts/OpenSans-SemiBold.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: OpenSansBold;
+  src: url('../../shared/assets/fonts/OpenSans-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+$icons: 'cat', 'dog', 'birds', 'rodents', 'reptils', 'rabbits', 'ferrets';
+$icons-length: list.length($icons);
+
+@mixin pet-icon($icon-number, $icon-name) {
+  .card_#{$icon-number} {
+    background-image: url('../../shared/assets/images/#{$icon-name}ForButton.svg');
+  }
+}
+
+@for $i from 1 through $icons-length {
+  @include pet-icon($i, list.nth($icons, $i));
+}
+
+.container {
+  max-width: 1000px;
+  justify-content: space-between;
+  margin: 70px auto 0;
+  align-items: start;
+  gap: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgb(217 217 217 / 100%);
+
+  @media screen and (width <= 960px) {
+    margin: 60px auto 0;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (width <= 780px) {
+    margin: 25px auto 0;
+    align-items: center;
+  }
+
+  .header {
+    font-size: 40px;
+    font-weight: 700;
+    max-width: 456px;
+    color: rgb(101 106 110 / 100%);
+
+    @media screen and (width <= 780px) {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  .pets {
+    flex-wrap: wrap;
+    gap: 14px 48px;
+
+    @media screen and (width <= 780px) {
+      justify-content: center;
+    }
+
+    .cards {
+      display: inline-flex;
+      width: 204px;
+      height: 150px;
+      border: 2px solid rgb(217 217 217 / 100%);
+      border-radius: 7px;
+      background-color: transparent;
+      font-family: OpenSansBold, sans-serif;
+      font-weight: 700;
+      background-repeat: no-repeat;
+      background-position: bottom 15px right 15px;
+
+      .card_number {
+        position: relative;
+        top: -12px;
+        left: 17px;
+        font-size: 64px;
+        color: rgb(217 217 217 / 100%);
+      }
+
+      .card_name {
+        position: relative;
+        top: 32px;
+        left: -37px;
+        font-size: 24px;
+        color: black;
+      }
+    }
+
+    .button {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-family: OpenSansSemiBold, sans-serif;
+      color: white;
+      background-color: rgb(101 106 110 / 100%);
+      text-indent: 0;
+      cursor: pointer;
+    }
+  }
+}
